@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#191919"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:weightSum="1"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="#ed454444"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnThem"
+                android:layout_width="25dp"
+                android:layout_height="15dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/more"
+                android:contentDescription="@string/btnThem" />
+
+            <TextView
+                android:id="@+id/txtMLuuTru"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_weight="1"
+                android:text="@string/txtMLuuTru"
+                android:textColor="#b8b5b5"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPhepTinh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/txtPhepTinh"
+                android:textColor="#b8b5b5"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/txtEmpty"
+                android:layout_width="25dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="1dp"
+                android:text="@string/txtEmpty" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtKetQua"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:text="@string/txtKetQua"
+                android:textColor="#b8b5b5"
+                android:textSize="35sp" />
+
+            <ImageButton
+                android:id="@+id/btnXoa"
+                android:layout_width="20dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/delete"
+                android:contentDescription="@string/btnXoa" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="0.05"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMC"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnMC"
+            android:textColor="#b8b5b5"
+            android:textSize="17sp"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/btnMR"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnMR"
+            android:textColor="#b8b5b5"
+            android:textSize="17sp"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btnMTru"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnMTru"
+            android:textColor="#b8b5b5"
+            android:textSize="17sp"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btnMCong"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnMCong"
+            android:textColor="#b8b5b5"
+            android:textSize="17sp"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.2"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            tools:ignore="NestedWeights">
+
+            <Button
+                android:id="@+id/btnClear"
+                style="@android:style/ButtonBar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#333333"
+                android:singleLine="false"
+                android:text="@string/btnClear"
+                android:textColor="#b8b5b5"
+                android:textSize="25sp"
+                tools:ignore="RtlHardcoded" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPhanTram"
+                style="@android:style/ButtonBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#333333"
+                android:text="@string/btnPhanTram"
+                android:textColor="#b8b5b5"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/btnPhepChia"
+                style="@android:style/ButtonBar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#333333"
+                android:text="@string/btnPhepChia"
+                android:textColor="#b8b5b5"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSoBay"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoBay"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="NestedWeights,RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btnSoTam"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoTam"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btnSoChin"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoChin"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btnPhepNhan"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnPhepNhan"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="RtlHardcoded" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSoBon"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoBon"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/btnSoNam"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoNam"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnSoSau"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoSau"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnPhepTru"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnPhepTru"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSoMot"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoMot"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/btnSoHai"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoHai"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnSoBa"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoBa"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnPhepCong"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnPhepCong"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_weight="0.2"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSoKhong"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnSoKhong"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp"
+            tools:ignore="NestedWeights" />
+
+        <Button
+            android:id="@+id/btnHaiSoKhong"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnHaiSoKhong"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnDauCham"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#ed5b5757"
+            android:text="@string/btnDauCham"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btnDauBang"
+            style="@android:style/ButtonBar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:background="#333333"
+            android:text="@string/btnDauBang"
+            android:textColor="#b8b5b5"
+            android:textSize="25sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="btnThem">Them</string>
+    <string name="txtMLuuTru">M 2,500</string>
+    <string name="txtPhepTinh">4,500+1,230,000</string>
+    <string name="txtEmpty" />
+    <string name="txtKetQua">1,234,500</string>
+    <string name="btnXoa">delete</string>
+    <string name="btnMC">MC</string>
+    <string name="btnMR">MR</string>
+    <string name="btnMTru">M-</string>
+    <string name="btnMCong">M+</string>
+    <string name="btnClear">CLEAR</string>
+    <string name="btnPhanTram">%</string>
+    <string name="btnPhepChia">÷</string>
+    <string name="btnSoBay">7</string>
+    <string name="btnSoTam">8</string>
+    <string name="btnSoChin">9</string>
+    <string name="btnPhepNhan">x</string>
+    <string name="btnSoBon">4</string>
+    <string name="btnSoNam">5</string>
+    <string name="btnSoSau">6</string>
+    <string name="btnPhepTru">-</string>
+    <string name="btnSoMot">1</string>
+    <string name="btnSoHai">2</string>
+    <string name="btnSoBa">3</string>
+    <string name="btnPhepCong">+</string>
+    <string name="btnSoKhong">0</string>
+    <string name="btnHaiSoKhong">00</string>
+    <string name="btnDauCham">.</string>
+    <string name="btnDauBang">=</string>
+</resources>

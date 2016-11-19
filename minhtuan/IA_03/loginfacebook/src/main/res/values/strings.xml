@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginFacebook</string>
+    <string name="SignUpForFacebook"><u>Sign Up For Facebook</u></string>
+    <string name="txtEmailOrPhone">Email or Phone</string>
+    <string name="txtPassword">Password</string>
+    <string name="btnLogin">Log In</string>
+    <string name="imageView">facebook</string>
+    <string name="btnGiupDo">\?</string>
+</resources>
