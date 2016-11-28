@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">About</string>
+    <string name="txtVersion">Calculator 1.0.0</string>
+    <string name="txtMSSV">MSSV: 1542107 - Group12</string>
+    <string name="txtDiaChi">Địa chỉ: Bến tre</string>
+    <string name="btnCall">Call</string>
+    <string name="txtGoiChoBoPhanBanHang">Gọi cho bộ phận bán hàng</string>
+    <string name="btnShareText">Share</string>
+    <string name="btnShareEmail">btnSendEmail</string>
+    <string name="btnSendSMS">btnSendSMS</string>
+    <string name="btnGoogleMap">btnGoogleMap</string>
+    <string name="txtSendSMS">Gửi SMS</string>
+    <string name="txtSendEmail">Gửi Email</string>
+    <string name="txtShareText">Chia sẻ</string>
+    <string name="txtViewAddress">Xem vị trí</string>
+    <string name="txtCalculator">Calculator</string>
+    <string name="ImageView">ImageView</string>
+</resources>
