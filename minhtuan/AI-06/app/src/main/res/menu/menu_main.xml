@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".CalculatorActivity">
+
+    <item
+        android:id="@+id/btnSetting"
+        android:orderInCategory="180"
+        android:showAsAction="never"
+        android:title="Settings"
+        tools:ignore="AppCompatResource">
+
+    </item>
+
+    <item
+        android:id="@+id/btnAbout"
+        android:orderInCategory="200"
+        android:showAsAction="never"
+        android:title="About"
+        tools:ignore="AppCompatResource"/>
+</menu>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="btnThem">Them</string>
+    <string name="txtMLuuTru"></string>
+    <string name="txtPhepTinh"></string>
+    <string name="txtEmpty" />
+    <string name="txtKetQua">0</string>
+    <string name="btnXoa">delete</string>
+    <string name="btnMC">MC</string>
+    <string name="btnMR">MR</string>
+    <string name="btnMTru">M-</string>
+    <string name="btnMCong">M+</string>
+    <string name="btnClear">CLEAR</string>
+    <string name="btnPhanTram">%</string>
+    <string name="btnPhepChia">÷</string>
+    <string name="btnSoBay">7</string>
+    <string name="btnSoTam">8</string>
+    <string name="btnSoChin">9</string>
+    <string name="btnPhepNhan">x</string>
+    <string name="btnSoBon">4</string>
+    <string name="btnSoNam">5</string>
+    <string name="btnSoSau">6</string>
+    <string name="btnPhepTru">-</string>
+    <string name="btnSoMot">1</string>
+    <string name="btnSoHai">2</string>
+    <string name="btnSoBa">3</string>
+    <string name="btnPhepCong">+</string>
+    <string name="btnSoKhong">0</string>
+    <string name="btnHaiSoKhong">00</string>
+    <string name="btnDauCham">.</string>
+    <string name="btnDauBang">=</string>
+
+    <string name="txtCalculator">Calculator</string>
+    <string name="ImageView">Image Calculator</string>
+
+    <string name="txtVersion">Calculator 1.0.0</string>
+    <string name="txtMSSV">MSSV: 1542107 - Group12</string>
+    <string name="txtDiaChi">Địa chỉ: Bến tre</string>
+    <string name="btnCall">Call</string>
+    <string name="txtGoiChoBoPhanBanHang">Gọi cho bộ phận bán hàng</string>
+    <string name="btnShareText">Share</string>
+    <string name="btnShareEmail">btnSendEmail</string>
+    <string name="btnSendSMS">btnSendSMS</string>
+    <string name="btnGoogleMap">btnGoogleMap</string>
+    <string name="txtSendSMS">Gửi SMS</string>
+    <string name="txtSendEmail">Gửi Email</string>
+    <string name="txtShareText">Chia sẻ</string>
+    <string name="txtViewAddress">Xem vị trí</string>
+    <string name="txtChonTheme">Chọn theme:</string>
+    <string name="rbBlack">Black</string>
+    <string name="rbWhite">White</string>
+    <string name="txtChonKieuHienSoThuc">Chọn kiểu dấu số thực:</string>
+    <string name="rbDauCham">.</string>
+    <string name="rbDauPhay">,</string>
+    <string name="btnApDung">Áp dụng</string>
+</resources>
