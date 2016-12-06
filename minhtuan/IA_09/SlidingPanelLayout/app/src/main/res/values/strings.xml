@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SlidingPanelLayout</string>
+
+    <string name="action_Home">Home</string>
+</resources>

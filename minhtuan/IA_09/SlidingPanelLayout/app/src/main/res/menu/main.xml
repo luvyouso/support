@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_Home"
+        android:orderInCategory="100"
+        android:title="@string/action_Home"
+        app:showAsAction="always" />
+
+    <!-- ActionBar chua duoc thiet lap su dung -->
+    <item
+        android:id="@+id/action_setting"
+        android:orderInCategory="100"
+        android:title="Setting"
+        app:showAsAction="never" />
+    <!-- ActionBar chua duoc thiet lap su dung -->
+</menu>
