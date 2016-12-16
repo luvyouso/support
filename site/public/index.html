@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="description" content="description of your site">
+        <meta name="author" content="author of the site">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+        <meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+    
+        <title>Find My Phone</title>
+        
+        <link rel="shortcut icon" href="images/Logo.png">
+        
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="csscss/elastislide.css" />
+        <link rel="stylesheet" type="text/css" href="csscss/custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+        
+        
+	    <link href="themes/1/slider.css" rel="stylesheet" type="text/css" />
+    	
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">
+        <script src="themes/jquery-1.7.1.min.js" type="text/javascript"></script>
+	    <script src="themes/1/jquery-slider.js" type="text/javascript"></script>
+        
+        <script src="js/modernizr.custom.17475.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.knob.js"></script>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/jquery.peity.min.js"></script>
+        <script src="js/setup.js"></script>
+
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/json2.js"></script>
+        <script src="js/jquery.collapse.js"></script>
+        <script src="js/jquery.collapse_storage.js"></script>
+        <script src="js/jquery.collapse_cookie_storage.js"></script>
+        
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        
+        <script>
+			$(function() {
+				$( "#accordion" ).accordion();
+			});
+			
+			function slidCheck(){
+				//alert($(location).attr('href').indexOf("instructions"));
+				if($(location).attr('href').indexOf("instructions") != -1){
+				  document.getElementById("expanderContent").style.display = "block";
+				  //$("#expanderContent").css('display','block');
+				}
+			}
+		</script>
+      
+        <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
+    </head>
+
+    <body onLoad="slidCheck()">
+        <div id="in-nav" style="height:445px; padding-top:0px;">
+            <div class="container" style="height:100%;">
+                <div class="row" style="background-color:#439F0C;height:100%; width:1210px;">
+                    <div class="span12" style="height:50px;">
+                    	<div style="width:100%; height:85px; color:#FFF; text-align:right">
+                        	<span style="margin-right:7%;"><a href="login.html" style="text-decoration:none; color:#FFF;"><strong>Login</strong></a></span>
+                        </div>
+                        <div style="width:67%; height:280px;float:left;">
+                        	<div style="width:12%; height:95px; float:left">
+                            	<img src="images/Logo.png" style="width:100%; height:100%;">
+                            </div>
+                            <div style="width:88%; height:95px;float:right; color:#FFF; font-family:Lato; font-weight:300; font-size:50px;">
+                            	<p style="margin-top:32px;">Find My Phone™</p>
+                            </div>
+                            <div style="width:100%; height:auto; float:left; color:#FFF; font-family:Lato; font-size:40px;">
+                            	<p style="margin-top:20px;">Best protection for your</p>
+                                <p style="margin-top:20px;">Android device!</p>                                
+                            </div>
+                            <div style="width:100%; height:auto; float:left; color:#FFF; font-family:Lato; font-size:24px; font-weight:300;">
+                            	<p style="margin-top:20px;">Find your lost, stolen or misplaced phone with </p>
+                                <p style="margin-top:10px;">the original device recovery app for Android.</p>
+                            </div>
+                        </div>
+                        <div style="width:33%; height:280px;float:right;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" style="background-color:#FFF; margin: auto; width:1210px;">
+            <div class="page-container">
+                <div class="container">
+                	<div class="row">
+                    	<div class="span12">
+                        	<div style="width:53%;float:left; margin-top:25px;">
+                                <div style="width:42%; height:100%; float:left; color:#000; font-family:Lato; font-size:25px;">
+                                    <p>Find My Phone</p>
+                                    <!--<p style="font-size:14px">Sep 23, 2013 &nbsp;|&nbsp; <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><span style="color:#439F0C; text-decoration:underline;">See what's new</span></a></p>-->
+                                    <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img src="images/google-play-icon.png" style="width:150px; height:50px;"></a>
+                                </div>
+                                <div style="width:57%; height:100%; float:right; color:#000; font-family:Lato; font-size:25px; font-weight:50; border-left:groove; border-left-color:#CCC; border-left-width:1px;">
+                                    <p style="margin-left:20px;">Find My Phone<span style="color:#999;"> Lite</span></p>
+                                    <!--<p style="font-size:14px; margin-left:20px;">Sep 23, 2013 &nbsp;|&nbsp; <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone3" target="_blank"><span style="color:#439F0C; text-decoration:underline;">See what's new</span></a></p>-->
+                                    <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone3" target="_blank"><img src="images/google-play-icon.png"  style="width:150px; height:50px; margin-left:20px;"></a>
+                                </div>
+                            </div>
+                            <div class="page" style="width:47%; margin-top:-425px; height:680px; box-shadow:0; float:right">
+                                <img src="images/Phone.png" style="width:100%; height:100%;">
+                            </div>
+                            
+                            <div style="width:100%; float:left;">
+                                <hr style="width:100%; border-top:1px solid #999;">
+                            	<h1 style="color:#439F0C; font-size:50px; font-weight:300;">Features:</h1>
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/SMS.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">SMS your lost phone to </p>
+                                    <p style="font-family:Lato; font-size:36px; margin-top:20px;">locate it</p>
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a text message to your phone and it will text <br> back it current location, or have it ring loudly if its <br>somewhere nearby</p>
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/WipePhone.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Wipe your phone data</p>
+                                    <p style="font-family:Lato; font-size:36px; margin-top:20px;">remotely by SMS</p>
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Secure your emails, text messages, photos, notes, <br>calendar and more by remotely wiping your phone <br>with SMS.</p>
+                                </div>
+                            </div>
+                            <div style="width:100%; float:left; margin-top:40px;">
+                            	<div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/Battery.png" style = "height:80px">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Find out how much </p>
+                                    <p style="font-family:Lato; font-size:36px; margin-top:20px;">battery is left</p>
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Know how much time you have before the phone <br>runs out of battery.</p>
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/SIM.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Get notified when the SIM</p>
+                                    <p style="font-family:Lato; font-size:36px; margin-top:20px;">card is changed</p>
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Keep tabs on your phone's SIM card.</p>
+                                </div>
+                            </div>
+                            <div style="width:1210px;; float:left;background-color:#F4F4F4; margin-left:-30px; margin-top:110px; height:330px;">
+                            	<h1 style="color:#000; font-size:50px; font-weight:300; margin-left:30px; margin-top:40px;">4+ STAR RATING SINCE 2009!</h1>
+                                <div style="width:25%;float:left">
+                                	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:48px;"><strong>Awesome</strong></p>
+                                    <div style="width:16%;float:left">
+                                    	<img src="images/quote.png" style="width:100%; height:45px; margin-left:0px; margin-top:-9px;" align="right">
+                                    </div>
+                                    <div style="width:84%;float:right">
+                                    	<p style="font-size:16px; font-family:Lato; color:#666; text-align:justify; margin-right:20px;">They finely made an app worth downloading<br><br><strong style="color:#000;">Nat Twiddy</strong></p>
+                                    </div>	
+                                </div>
+                                <div style="width:25%; height:100px; float:left">
+                                	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:48px;"><strong>Saved me 659 dollars</strong></p>
+                                    <div style="width:16%;float:left">
+                                    	<img src="images/quote.png" style="width:100%; height:45px; margin-left:0px; margin-top:-9px;" align="right">
+                                    </div>
+                                    <div style="width:84%;float:right">
+                                    	<p style="font-size:16px; font-family:Lato; color:#666; text-align:justify;margin-right:20px;">Lost my phone and this app found it at the bus terminal lost and found. Can't say enough to thank-you!!!<br><br><strong style="color:#000;">Ray Brimhall</strong></p>
+                                    </div>
+                                </div>
+                                <div style="width:24%; height:100px; float:left">
+                                	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:48px;"><strong>Love it!</strong></p>
+                                    <div style="width:16%;float:left">
+                                    	<img src="images/quote.png" style="width:100%; height:45px; margin-left:0px; margin-top:-9px;" align="right">
+                                    </div>
+                                    <div style="width:84%;float:right">
+                                    	<p style="font-size:16px; font-family:Lato; color:#666; text-align:justify;margin-right:20px;">You don't need 3G to locate your phone with this app, so you don't need any data connection  to use it! Location finding is vert accurate as well! I recommend this app!<br><br><strong style="color:#000;">Patrick Howden</strong></p>
+                                    </div>
+                                </div>
+                                <div style="width:24%; height:100px; float:right; margin-right:18px;">
+                                	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:48px;"><strong>Great app</strong></p>
+                                    <div style="width:16%;float:left">
+                                    	<img src="images/quote.png" style="width:100%; height:45px; margin-left:0px; margin-top:-9px;" align="right">
+                                    </div>
+                                    <div style="width:84%;float:right">
+                                    	<p style="font-size:16px; font-family:Lato; color:#666; text-align:justify;margin-right:20px;">I can always find my phone and its really easy to use.<br><br><strong style="color:#000;">Termanator58</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div style="width:1210px;; float:left; margin-left:-30px; margin-top:26px; height:330px;">
+                            	<h1 style="color:#439F0C; font-size:50px; font-weight:300; margin-left:30px; margin-top:40px;">WHAT'S NEW?</h1>
+                                <div style="width:25%;float:left; background-color:#ECF5E6; height:200px;">
+                                	<div style="width:10%;float:left; background-color:#FFF; height:200px;"></div>
+                                    <div style="width:90%;float:right">
+                                    	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:13px; margin-top:13px;"><strong>Take photos remotely (Beta)</strong></p>
+                                    	<p style="font-size:16px; font-family:Lato; color:#666; margin-left:13px; margin-right:13px; text-align:justify;">Want a visual of your phone's location possibly including a mugshot of the thief? Find My Phone will snap a photo of its current location and attach the pictures in email. Note: must be activated on device.</p>
+                                    </div>	
+                                </div>
+                                <div style="width:25%;float:left; background-color:#ECF5E6; height:200px;">
+                                	<div style="width:6%;float:left;background-color:#FFF; height:200px;"></div>
+                                    <div style="width:94%;float:right">
+                                    	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:13px; margin-top:13px;"><strong>Low Battery alert flare</strong></p>
+                                    	<p style="font-size:16px; font-family:Lato; color:#666;margin-left:13px; margin-right:13PX; text-align:justify;">Want to keep tabs on your phone "before" the battery runs out? Turn on low battery alerts.</p>
+                                    </div>
+                                </div>
+                                <div style="width:25%;float:left; background-color:#ECF5E6; height:200px;">
+                                	<div style="width:6%;float:left; background-color:#FFF; height:200px;"></div>
+                                    <div style="width:94%;float:right">
+                                    	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:13px; margin-top:13px;"><strong>Remote Wipe (Factory reset)</strong></p>
+                                    	<p style="font-size:16px; font-family:Lato; color:#666;margin-left:13px; margin-right:13px; text-align:justify;">Remotely wipe your phone if you think your device might be in the wrong hands. (Requires on-device set up.)</p>
+                                    </div>
+                                </div>
+                                <div style="width:25%;float:right; background-color:#ECF5E6; height:200px;">
+                                	<div style="width:6%;float:left;background-color:#FFF; height:200px;"></div>
+                                    <div style="width:88%;float:left">
+                                    	<p style="font-size:18px; font-family:Lato; color:#439F0C; margin-left:13px; margin-top:13px;"><strong>Brand New Design</strong></p>
+                                    	<p style="font-size:16px; font-family:Lato; color:#666;margin-left:13px; text-align:justify;">A new, clean and interactive design.</p>
+                                    </div>
+                                    <div style="width:6%;float:right;background-color:#FFF; height:200px;"></div>
+                                </div>
+                            </div>
+                            
+                            <div style="width:1210px;; float:left; margin-left:-30px; margin-top:26px; height:auto">
+                            	<h1 style="color:#439F0C; font-size:50px; font-weight:300; margin-left:30px; margin-top:40px;">KNOW MORE</h1>
+                                <div>
+                                	<div id="expanderSign" style="float:left; width:10px; height:10px; background-image:url(images/ui-icons_222222_256x240.png); background-position:-66px -18px; margin-left:35px; margin-top:17px; color:#FFF;">+</div>
+									<h3 id="instructions" style="background-color:#FFF; border:0px; margin-left:55px;cursor:pointer;"><span style=" color:#439F0C; font-size:18px; font-weight:300; text-decoration:underline;"><strong>How it works</strong></span><span style=" color:#CCC; font-size:18px; font-weight:300; text-decoration:none;"> (Detailed Instructions)</span></h3>
+									<div style="margin-left:35px;background-color:#F4F4F4; border:0px; margin-right:30px; height:inherit;" id="expanderContent">
+                                    	<br>
+										<p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Quick Start</strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>Install Find My Phone. Enable GPS.</li>
+                                                <li>Text 01234 to your phone to start tracking your phone.</li>
+                                                <li>Text 56789 to your phone to track it and to make it ring simultaneously.</li>
+                                                <li>Note: If you have any custom text messaging apps installed, like Go SMS Pro or Handcent, then you may need to check the Settings and make sure they pass SMS messages to other apps. Instructions are available in the FAQ.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Phone already lost?</strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>If your phone is running Android 3.0 or lower, you can remotely install from Google Play. Find My Phone will activate once you send the trigger text message.</li>
+                                                <li>Note that if your phone has run out of battery or doesn't have any reception, Find My Phone will not respond.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Finding from the Web</strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>Don't have another phone to text with, or just prefer using the computer to track? Send your Find My Phone Trigger (default 01234) to your phone via one of the many free SMS services available online, including www.textem.net and Google Voice.</li>
+                                                <li>Find My Phone will then email the phone's location to you. By default, these are the email addresses associated with your device.</li>
+                                                <li>Note: If phone is out of battery or doesn't have a data connection, you will not receive the emails. Try texting from another phone in case your phone has an active non-data connection. Also check your Spam folder in case your email provider has marked the emails as spam.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Device Administration </strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>Granting device administration rights to Find My Phone enables many important features, including: 
+                                                	<ul>
+                                                    	<li>Remote wiping</li>
+                                                        <li>Locking your phone</li>
+                                                        <li>Preventing unauthorized uninstallation of the app. </li>
+                                                    </ul>
+                                                </li>
+                                                <li>If you want to uninstall the app, you have to turn off the Device Administration rights assigned to the app.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Wipe phone </strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>If you have awarded device administration privileges to Find My Phone, you can remotely wipe the phone if needed.</li>
+                                                <li>Default trigger to wipe your device is: 10101.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Find phone </strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>For Find My Phone to work reliably, you should keep GPS and wireless network location providers enabled. You can do so by hitting the 'Go enable location sources' button.</li>
+                                                <li>When you lose your phone, simply SMS your Find My Phone Trigger word to it in order to activate Find My Phone. This SMS message is called the start message. You can use a relative's, a friend's, or a backup phone to send the start message.</li>
+                                                <li>After Find My Phone has been activated, it will start sending you SMS messages with your phone's location information. This includes the phone's GPS coordinates and usually a street address.</li>
+                                                <li>If there is no street address sent or the address is not specific enough, you can open a web browser and go to the supplied Map URL and see where your phone is in Google Maps. Your phone's GPS coordinates are part of the Map URL - the first number is your phone's GPS latitude and the second number is it's longitude.</li>
+                                                <li>Find My Phone may try to use alternate location providers, including your wireless network and any available WiFi network for location information. If this happens, note that the location information may not be as accurate. Find My Phone will tell you what provider it is using. Generally, GPS is best, followed by network provider, followed by, Wifi.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Ring Phone </strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>At times, you will lose your phone inside your home or somewhere close by. When this happens, SMS your Ring Phone Trigger word to your lost phone. This will trigger your phone to play a ringtone at maximum volume for 3 minutes. This will give you ample time to find your phone. You will also get 3 location updates at 1 minute intervals while the phone rings. These settings cannot be changed.</li>
+                                            </ol>
+                                    	</p>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:25px; font-size:17px; font-family:Lato">Tags</strong>
+                                        	<ol style="font-family:Lato; margin-left:38px;">
+                                            	<li>Find My Phone supports a number of tags that you include the SMS commands you send. See here for more details on tags</li>
+                                            </ol>
+                                    	</p>
+                                        <br>
+                                        <div style="width:100%; height:40px; background-color:#D1E3C6; float:left; margin-top:-12px;">
+                                        	<div id="hide" style="margin-left:23px; margin-top:10px; cursor:pointer"><strong>x <span style="text-decoration:underline;">Close</span></strong></div>
+                                        </div>
+									</div>
+                                    <div id="expanderSign1" style="float:left; width:10px; height:10px; background-image:url(images/ui-icons_222222_256x240.png); background-position:-66px -18px; margin-left:35px; margin-top:17px;color:#FFF">+</div>
+									<h3 id="expanderHead1" style="background-color:#FFF; border:0px; margin-left:55px; cursor:pointer;"><span style=" color:#439F0C; font-size:18px; font-weight:300; text-decoration:underline;"><strong>FAQ</strong></span></h3>
+                                  	<div id="expanderContent1" style="margin-left:32px;background-color:#F4F4F4; border:0px; margin-right:30px; height:inherit;">
+                                    	<br>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I have installed Find My Phone. Now what do I do?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Text 01234 to your phone. For more details, see "How it works" above.</p>
+                                    	</p>
+										<p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I sent the SMS trigger but I'm not getting any response!</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">There are many reasons why your device may not respond. It could be out of battery, or not having any cell reception. Remote installation only works on older devices. It may not have a data connection, in which case Find My Phone cannot send emails. We recommend installing other similar apps to give yourself best chance of finding your lost device. Start with <a href="https://www.google.com/android/devicemanager">Android Device Manager</a> </p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">Can I remotely install Find My Phone from the Google Play store AFTER I've lost my phone?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Yes, you can if your device has Android version 3.0 or lower. On devices 3.1+, the app gets installed but cannot run until you manually open the app. 
+    Note that if your phone has run out of battery or doesn't have a signal, Find My Phone will not respond. </p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">Will it work if the phone is off?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Nope, but once the phone is turned on again, Find My Phone will get your SMS message and activate.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I just purchased the app but it's not downloading!</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">This is an issue with the Google Play, and has nothing to do with Find My Phone. Troubleshooting instructions are available here.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">Does Find My Phone hide the trigger SMS so a thief can't see it?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Yes, Find My Phone tries to consume the SMS so that the standard Messaging app never sees it. However, advanced text messaging apps like Go SMS may still
+    intercept the SMS and display it.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I'm tracking remotely but I'm not getting any emails.</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">First, check your Spam/Trash folders. You email provider may have marked it as Spam by mistake. Secondly, the phone can only send emails if it has a data
+    connection and has not run out of battery.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I forgot the app password so I can't get in.</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">You can uninstall app and reinstall it free of charge. You now have a clean installation that you can reconfigure.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">Do I need to keep GPS on at all times?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Find My Phone can automatically turn on GPS for devices with Android v2.2 and below and wifi in most cases. It is still recommended that you keep these
+    turned on.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">Won't having GPS on at all times drain the battery?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">GPS is only turned on when you are actually running apps that utilize GPS. So If you're simply talking on the phone, GPS is not active and not draining the
+    battery. Moreover, if you charge your phone every day or two, you will probably not notice the battery drain.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I have Go SMS Pro installed and Find My Phone isn't working.</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Go SMS intercepts SMS messages first and can then refuse to share the message with any other apps, so Find My Phone never sees your SMS messages. In Go
+    SMS, make sure "Disable other message notification" is unchecked. This setting can be found in Go SMS -> menu -> Settings -> Advanced -> Receive Settings.</p>
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I have Handcent installed and Find My Phone isn't working.</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Handcent intercepts SMS messages first and can then refuse to share the message with any other apps, so Find My Phone never sees your SMS messages. Do
+     this in Handcent:  Menu -> Settings -> Application Settings -> Default Messaging application -> Disable.</p>
+                                    	</p>
+                                        <br>
+                                        <div style="width:100%; height:40px; background-color:#D1E3C6; float:left; margin-top:-12px;">
+                                        	<div id="hide1" style="margin-left:23px; margin-top:10px; cursor:pointer"><strong>x <span style="text-decoration:underline;">Close</span></strong></div>
+                                        </div>
+									</div>
+                                    <div id="expanderSign2" style="float:left; width:10px; height:10px; background-image:url(images/ui-icons_222222_256x240.png); background-position:-66px -18px; margin-left:35px; margin-top:17px;color:#FFF">+</div>
+									<h3 id="expanderHead2" style="background-color:#FFF; border:0px; margin-left:55px; cursor:pointer;"><span style=" color:#439F0C; font-size:18px; font-weight:300; text-decoration:underline;"><strong>Screenshots</strong></span></h3>
+                                  	<div id="expanderContent2" style="margin-left:32px;background-color:#F4F4F4; border:0px; margin-right:30px; height:inherit;">
+                                    	<br>
+                                        <div class="div2">
+                                            <!--<div id="mcts1" style="height:540px;">-->
+                                            <div style="height:1100px;">
+                                            	<div style="width:30%; height:540px; float:left;">
+                                                	<img src="images/Screen-1_framed.png" style="height:540px;"/>
+                                                </div>
+                                                <div style="width:30%; height:540px; float:left; margin-left:5%;">
+                                                	<img src="images/Screen-2_framed.png" style="height:540px;"/>
+                                                </div>
+                                                <div style="width:30%; height:540px; float:left; margin-left:5%;">
+                                                	<img src="images/Screen-3_framed.png" style="height:540px;"/>
+                                                </div>
+                                                <div style="width:30%; height:540px; float:left;">
+                                                	<img src="images/Screen-4_framed.png" style="height:540px;"/>
+                                                </div>
+                                                <div style="width:30%; height:540px; float:left; margin-left:5%;">
+                                                	<img src="images/Screen-5_framed.png" style="height:540px;"/>
+                                                </div>
+                                                <div style="width:30%; height:540px; float:left; margin-left:5%;">
+                                                	<img src="images/Screen-6_framed.png" style="height:540px;"/>
+                                                </div>
+                                                <!--<img src="images/Screen-1_framed.png" style="height:540px;"/>
+                                                <img src="images/Screen-2_framed.png" style="height:540px;"/>
+                                                <img src="images/Screen-3_framed.png" style="height:540px;"/>
+                                                <img src="images/Screen-4_framed.png" style="height:540px;"/>
+                                                <img src="images/Screen-5_framed.png" style="height:540px;"/>
+                                                <img src="images/Screen-6_framed.png" style="height:540px;"/>-->
+
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div style="width:100%; height:40px; background-color:#D1E3C6; float:left; margin-top:-12px;">
+                                        	<div id="hide2" style="margin-left:23px; margin-top:10px; cursor:pointer"><strong>x <span style="text-decoration:underline;">Close</span></strong></div>
+                                        </div>                                     	
+                                    </div>    
+                                    <div style="width:100%; height:40px; float:left; margin-top:-12px; margin-left:32px; color:#439F0C">
+                                    	<br/><br/>
+                                        For support please write to us at <a style="color:#439F0C; text-decoration:underline" href="mailto:support@mangobird.com">support@mangobird.com</a>
+                                    </div>
+                                </div>
+							</div>
+                            <div style="width:1210px;; float:left;background-color:#439F0C; margin-left:-30px;height:80px; margin-top:50px;">
+                            	<div style="width:3%; height:100%; float:left"></div>
+                                <div style="width:94%; height:100%; float:left">
+                                	<div style="width:39%; height:100%; float:left;">
+	                                    <a href="http://www.mangobird.com/" target="_blank"><P style="text-decoration:underline; color:#FFF; margin-top:6%;">@Mangobird</P></a>
+                                    </div>
+                                    <div style="width:30%; height:100%; float:left;">
+                                    	<P style="color:#FFF; margin-top:6%; font-size:20px">Find My Phone <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img src="images/google-play-icon.png" style="width:145px; height:45px; margin-top:-2px;"></a></P>
+                                    </div>
+                                    <div style="width:30%; height:100%; float:right; border-left:groove; border-left-color:#CCC; border-left-width:1px;">
+                                    	<P style="color:#FFF; margin-top:6%; font-size:20px; margin-left:15px;">Find My Phone <span style="font-weight:300">Lite</span> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone3" target="_blank"><img src="images/google-play-icon.png" style="width:145px; height:45px; margin-top:-2px;"></a></P>
+                                    </div>
+                                </div>
+                                <div style="width:3%; height:100%; float:right"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="js/d3-setup.js"></script>
+        <script>
+            protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+            socket.onmessage = function(msg) { 
+                msg.data == 'reload' && window.location.reload()
+            }
+        </script>
+        <script>
+            function myClick(id){
+                alert("hi "+document.getElementById(""+id).text);
+            }
+        </script>
+        <script type="text/javascript">
+		$(document).ready(function(){
+			/*if($(location).attr('href').contains("instructions")){
+              $("#expanderContent").css('display','block');
+            }*/
+			$("#instructions").click(function(){
+				$("#expanderContent").slideToggle();
+				if ($("#expanderSign").text() == "+"){
+					$("#expanderSign").html("−")
+					$("#expanderSign").css('background-position','-4px -164px');					
+				}
+				else {
+					$("#expanderSign").text("+")
+					$("#expanderSign").css('background-position','-66px -18px');
+				}
+			});
+			$("#hide").click(function(){
+				$("#expanderContent").slideToggle();
+				if ($("#expanderSign").text() == "+"){
+					$("#expanderSign").html("−")
+					$("#expanderSign").css('background-position','-4px -164px');
+				}
+				else {
+					$("#expanderSign").text("+")
+					$("#expanderSign").css('background-position','-66px -18px');
+				}
+			});
+			
+			$("#expanderHead1").click(function(){
+				$("#expanderContent1").slideToggle();
+				if ($("#expanderSign1").text() == "+"){
+					$("#expanderSign1").html("−")
+					$("#expanderSign1").css('background-position','-4px -164px');					
+				}
+				else {
+					$("#expanderSign1").text("+")
+					$("#expanderSign1").css('background-position','-66px -18px');
+				}
+			});
+			$("#hide1").click(function(){
+				$("#expanderContent1").slideToggle();
+				if ($("#expanderSign1").text() == "+"){
+					$("#expanderSign1").html("−")
+					$("#expanderSign1").css('background-position','-4px -164px');					
+				}
+				else {
+					$("#expanderSign1").text("+")
+					$("#expanderSign1").css('background-position','-66px -18px');
+				}
+			});
+			
+			$("#expanderHead2").click(function(){
+				$("#expanderContent2").slideToggle();
+				if ($("#expanderSign2").text() == "+"){
+					$("#expanderSign2").html("−")
+					$("#expanderSign2").css('background-position','-4px -164px');
+				}
+				else {
+					$("#expanderSign2").text("+")
+					$("#expanderSign2").css('background-position','-66px -18px');
+				}
+			});
+			$("#hide2").click(function(){
+				$("#expanderContent2").slideToggle();
+				if ($("#expanderSign2").text() == "+"){
+					$("#expanderSign2").html("−")
+					$("#expanderSign2").css('background-position','-4px -164px');
+				}
+				else {
+					$("#expanderSign2").text("+")
+					$("#expanderSign2").css('background-position','-66px -18px');
+				}
+			});
+		});
+		</script>
+    </body>
+</html>
+

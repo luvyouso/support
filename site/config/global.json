@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Find My Phone": {
+            "applicationId": "E4rjUR3ITZZTuJ3W5EfwUi0pGC2t5eAMhyYBbz0u", 
+            "masterKey": "oTu8jCfAWckGoPHgGhKrg9LGdVPiBg0XSPqr15rL"
+        }, 
+        "_default": {
+            "link": "Find My Phone"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.12"
+    }
+}

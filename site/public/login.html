@@ -1,0 +1,1933 @@
+<!DOCTYPE html>
+<html>
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="description" content="description of your site">
+        <meta name="author" content="author of the site">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+        <meta name="keywords" content="carousel, jquery, responsive, fluid, elastic, resize, thumbnail, slider" />
+    
+        <title>Find My Phone</title>
+        
+        <link rel="shortcut icon" href="images/Logo.png">
+        
+        <link rel="stylesheet" href="css/bootstrap.css">
+       <!-- <link rel="stylesheet" href="css/bootstrap.min.css">-->
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="csscss/elastislide.css" />
+        <link rel="stylesheet" type="text/css" href="csscss/custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+        
+        
+	    <link href="themes/1/slider.css" rel="stylesheet" type="text/css" />
+    	
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">
+        <script src="themes/jquery-1.7.1.min.js" type="text/javascript"></script>
+	    <script src="themes/1/jquery-slider.js" type="text/javascript"></script>
+        
+        <script src="js/modernizr.custom.17475.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.knob.js"></script>
+        <script src="js/d3.v3.min.js"></script>
+        <script src="js/jquery.peity.min.js"></script>
+        <script src="js/setup.js"></script>
+
+        <script src="js/jquery-1.9.1.js"></script>
+        <script src="js/json2.js"></script>
+        <script src="js/jquery.collapse.js"></script>
+        <script src="js/jquery.collapse_storage.js"></script>
+        <script src="js/jquery.collapse_cookie_storage.js"></script>
+        
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        
+        <link rel="stylesheet" href="css/jquery.ui.all.css">
+		<!-- <script src="js/jquery-1.10.2.js"></script> -->
+		<!-- <script src="js/jquery.ui.core.js"></script>
+		<script src="js/jquery.ui.widget.js"></script>
+		<script src="js/jquery.ui.mouse.js"></script>
+		<script src="js/jquery.ui.button.js"></script>
+		<script src="js/jquery.ui.draggable.js"></script>
+		<script src="js/jquery.ui.position.js"></script> -->
+		<script src="js/jquery.ui.dialog.js"></script>
+		<link rel="stylesheet" href="demos.css">
+        <!--<script>
+			$(function() {
+				$( "#accordion" ).accordion();
+			});
+		</script>-->
+      
+        <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}
+        </style>
+        
+        <script>
+  $(function() {
+			 
+    var select = $( "#numberOfLocationUpdates" );
+	var lvlcnt = $("#levelCount");
+	var locationcount = $("#locationCount");
+	lvlcnt.text("3 Replies");
+	locationcount.text("3");
+    var slider = $( "<div id='slider1' style='width:31%; float:left;'></div>" ).insertAfter( select ).slider({
+      min: 1,
+      max: 3,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 2,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+		if((ui.value - 1)==0){
+			lvlcnt.text("1 Reply");
+			locationcount.text("0");
+		}
+		if((ui.value - 1)==1){
+			lvlcnt.text("3 Replies");
+			locationcount.text("1");
+		}
+		if((ui.value - 1)==2){
+			lvlcnt.text("10 Replies");
+			locationcount.text("2");
+		}
+      }
+    });
+    $( "#numberOfLocationUpdates" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+  </script>
+  
+   <script>
+  $(function() {
+    var select = $( "#locationIntervals" );
+	var lvlcnt = $("#levelCountLocation");
+	var intervalcount = $("#intervalCount");
+	intervalcount.text("1");
+	lvlcnt.text("1 minute");
+    var slider = $( "<div id='slider2' style='width:31%; float:left;'></div>" ).insertAfter( select ).slider({
+      min: 1,
+      max: 4,
+      range: "min",
+      value: select[ 0 ].selectedIndex + 1,
+      slide: function( event, ui ) {
+        select[ 0 ].selectedIndex = ui.value - 1;
+		if((ui.value - 1)==0){
+			lvlcnt.text("1 minute");
+			intervalcount.text("0");
+		}
+		if((ui.value - 1)==1){
+			lvlcnt.text("5 minutes");
+			intervalcount.text("1");
+		}
+		if((ui.value - 1)==2){
+			lvlcnt.text("10 minutes");
+			intervalcount.text("2");
+		}
+		
+		if((ui.value - 1)==3){
+			lvlcnt.text("60 minutes");
+			intervalcount.text("3");
+		}
+      }
+    });
+    $( "#locationIntervals" ).change(function() {
+      slider.slider( "value", this.selectedIndex + 1 );
+    });
+  });
+  </script>
+        
+        <script src="jquery-1.4.2.min.js" ></script>
+  <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+		
+		$('#toolHover img').tooltip({
+		    	track: true, 
+		    	delay: 0, 
+		    	showURL: false, 
+		    	showBody: " - ", 
+		    	fade: 250 
+		});
+						   
+		var isAppPro;	
+		var userId;
+		var notificationLeft;
+		
+		var weekCount;
+		$('#login').show();
+		$('#notification').hide();
+		$('#mblImg').hide();
+		$('#txtUserName').val("");
+		$('#txtPassword').val("");
+		$('#btnFindTrigger').css("display","none");
+		$('#btnRingTrigger').css("display","none");
+		$('#pBar1').css("display","none");
+		$('#pBar2').css("display","none");
+		$('#pBar3').css("visibility","hidden");
+		$('#modelName').css("display","none");
+		$('#selectDevice').css("display","none");
+		
+		$('#pBarNumberOfUpdates').css("display","none");
+		$('#numberOfUpdatesDiv').css("display","none");		
+		$('#intervalOfUpdatesDiv').css("display","none");	
+		$('#pBarIntervalOfUpdates').css("display","none");
+		
+		$('#pBarEmailUpdatesTo').css("display","none");
+		$('#pBarSetAppPwd').css("display","none");
+		$('#emailUpdatesToDiv').css("display","none");
+		$('#setAppPasswordDiv').css("display","none");
+		
+		$('#pBarWipePhone').css("display","none");
+		$('#pBarStopFindingMode').css("display","none");
+		$('#wipePhoneDiv').css("display","none");
+		$('#stopFindingModeDiv').css("display","none");
+		
+		$('#pBarLowBattery').css("display","none");
+		$('#pBarTakePhotos').css("display","none");
+		$('#lowBatteryDiv').css("display","none");
+		$('#takePhotosDiv').css("display","none");
+		
+		$('#pBarAttachGoogleMap').css("display","none");
+		$('#pBarWipePhoneSettings').css("display","none");
+		$('#attachGoogleMapDiv').css("display","none");
+		$('#wipePhoneSettingsDiv').css("display","none");
+		
+		$('#pBarMonitorSimCard').css("display","none");
+		$('#monitorSimCardDiv').css("display","none");
+		$('#pBarResetSettings').css("display","none");
+		$('#resetSettingsDiv').css("display","none");
+		
+		$('#starLowBattery').css("visibility","hidden");
+		$('#starWipePhone').css("visibility","hidden");
+		$('#starWipePhoneSettings').css("visibility","hidden");
+		$('#starTakePhotos').css("visibility","hidden");
+		$('#starAttachMap').css("visibility","hidden");
+		$('#starMonitorSim').css("visibility","hidden");
+		$('#starLockPhone').css("visibility","hidden");
+		$('#starLockPhoneSettings').css("visibility","hidden");
+		
+		$('#pBarLockPassword').css("display","none");
+		$('#lockPasswordDiv').css("display","none");
+		
+		$('#pBarLockPhoneSettings').css("display","none");
+		$('#lockPhoneSettingsDiv').css("display","none");
+		
+		//Parse.initialize("YziHre65gOfbMxt8j1KgyRRoit9N55UoyKTf0CvF", "DgM7sqB5njOjE45Lrz9rhyzfxNAnBSeqNHHGH1H1");
+		Parse.initialize("E4rjUR3ITZZTuJ3W5EfwUi0pGC2t5eAMhyYBbz0u", "ofXzmflrYMjzBr7xFx48aDgPdvs1f3zHsl7FMufj");
+		
+		var creationDate;
+		console.log('me reached');
+		$('#btnLogin').click(function(){
+				//alert("hello");		
+			if($('#txtUserName').val().toLowerCase().trim() != "" && $('#txtUserName').val().toLowerCase().trim() != null){
+				$('#pBar1').css("display","block");
+			$('#pBar2').css("display","block");
+			$('#pBar3').css("visibility","visible");
+			
+			$('#pBarNumberOfUpdates').css("display","block");
+			$('#pBarIntervalOfUpdates').css("display","block");
+			$('#pBarEmailUpdatesTo').css("display","block");
+		    $('#pBarSetAppPwd').css("display","block");
+			$('#pBarWipePhone').css("display","block");
+			$('#pBarStopFindingMode').css("display","block");
+			$('#pBarLowBattery').css("display","block");
+			$('#pBarTakePhotos').css("display","block");
+			$('#pBarAttachGoogleMap').css("display","block");
+			$('#pBarWipePhoneSettings').css("display","block");
+			$('#pBarMonitorSimCard').css("display","block");
+			$('#pBarResetSettings').css("display","block");
+			$('#pBarLockPassword').css("display","block");
+			$('#pBarLockPhoneSettings').css("display","block");
+			
+			Parse.User.logIn($('#txtUserName').val().toLowerCase().trim(), $('#txtPassword').val().trim(), {
+				  success: function(user) {
+					// Do stuff after successful login.
+					try{
+						$('#objectID').val(user.id);
+					//	document.getElementById("frmlogin").submit();
+				    $('#notification').show();
+					$('#mblImg').show();
+					$('#showUserName').text($('#txtUserName').val());
+					$('#login').hide();
+					$('#btnFindTrigger').css("display","block");
+					$('#btnRingTrigger').css("display","block");
+					$('#pBar1').css("display","none");
+					$('#pBar2').css("display","none");
+					$('#pBar3').css("visibility","hidden");
+					$('#modelName').css("display","block");
+					$('#selectDevice').css("display","block");
+					$('#attachGoogleMapDiv').css("display","block");
+					$('#wipePhoneSettingsDiv').css("display","block");
+					
+					$('#numberOfUpdatesDiv').css("display","block");		
+		            $('#intervalOfUpdatesDiv').css("display","block");
+					$('#emailUpdatesToDiv').css("display","block");
+					$('#setAppPasswordDiv').css("display","block");
+					$('#wipePhoneDiv').css("display","block");
+					$('#stopFindingModeDiv').css("display","block");
+					$('#lowBatteryDiv').css("display","block");
+					$('#takePhotosDiv').css("display","block");
+					$('#monitorSimCardDiv').css("display","block");
+					$('#resetSettingsDiv').css("display","block");
+					$('#lockPasswordDiv').css("display","block");
+					$('#lockPhoneSettingsDiv').css("display","block");
+						console.log(user);
+						
+						$('#pBarNumberOfUpdates').css("display","none");
+						$('#pBarIntervalOfUpdates').css("display","none");
+						$('#pBarEmailUpdatesTo').css("display","none");
+						$('#pBarSetAppPwd').css("display","none");
+						$('#pBarWipePhone').css("display","none");
+						$('#pBarStopFindingMode').css("display","none");
+						$('#pBarLowBattery').css("display","none");
+						$('#pBarTakePhotos').css("display","none");
+						$('#pBarAttachGoogleMap').css("display","none");
+						$('#pBarWipePhoneSettings').css("display","none");
+						$('#pBarMonitorSimCard').css("display","none");
+						$('#pBarResetSettings').css("display","none");
+						$('#pBarLockPassword').css("display","none");
+						$('#pBarLockPhoneSettings').css("display","none");
+						$('#notificationNumberDiv').css("display","block");
+						$('#btnPing').css("display","block");
+						$('#pingDevice').css("display","block");
+						
+						//console.log(JSON.stringify(user.topics));
+						//alert("success "+json.objectId);		
+					$('#btnFindTrigger').prop('disabled', true);
+					$('#btnRingTrigger').prop('disabled', true);
+				var GameScore = Parse.Object.extend("proApp");
+			    var query = new Parse.Query(GameScore);
+			    query.equalTo("currentUserId", $('#objectID').val());
+				query.ascending("modelName,deviceId,isAppPro");
+				query.find({
+			    success: function(results) {
+				//alert("Successfully retrieved " + results.length + " scores.");
+				// Do something with the returned Parse.Object values
+				var combo0 = '';
+				var combo0Pro;
+				
+				userId  = results[0].get('currentUserId');
+				for (var i = 0; i < results.length; i++) { 
+				    var object = results[i];
+					//alert(object.id + ' - ' + object.get('modelName'));
+					var comboString = '';
+					comboString = '<option value="'+object.get('installationId')+'">'+object.get('modelName')+' '
+					if (object.get('isAppPro') == false)																					 							comboString = comboString + 'Lite' + ' ' ;
+					comboString = comboString + '(' + object.get('deviceId')+ ')' +'</option>'  ;				
+					if (i==0){
+						combo0 = object.get('installationId');
+						combo0Pro = object.get('isAppPro');
+					}
+					$('#modelName').append(comboString);					
+				}
+				if (results.length >= 1){
+					$('#modelName').val(combo0);
+					if(combo0Pro != null){
+						    isAppPro  = combo0Pro;
+							if(!isAppPro){
+								$('#starLowBattery').css("visibility","visible");
+								$('#starWipePhone').css("visibility","visible");
+								$('#starWipePhoneSettings').css("visibility","visible");
+								$('#starTakePhotos').css("visibility","visible");
+								$('#starAttachMap').css("visibility","visible");
+								$('#starMonitorSim').css("visibility","visible");
+								$('#starLockPhone').css("visibility","visible");
+								$('#starLockPhoneSettings').css("visibility","visible");
+								
+							}else{
+								$('#starLowBattery').css("visibility","hidden");
+								$('#starWipePhone').css("visibility","hidden");
+								$('#starWipePhoneSettings').css("visibility","hidden");
+								$('#starTakePhotos').css("visibility","hidden");
+								$('#starAttachMap').css("visibility","hidden");
+								$('#starMonitorSim').css("visibility","hidden");
+								$('#starLockPhone').css("visibility","hidden");
+								$('#starLockPhoneSettings').css("visibility","hidden");
+							}
+						
+					}else{
+						//isAppPro = "false";
+					}
+					$('#btnFindTrigger').prop('disabled', false);
+					$('#btnRingTrigger').prop('disabled', false);
+				}
+				
+				//var currentdate = new Date();
+				/*Parse.Cloud.run('hello', {currentUserId: userId}, {
+					success: function(success) {
+						var result = success;
+					//alert(result);
+						alert(result);
+					//alert(""+result);
+					  },
+					  error: function(error) {
+						alert("Error: " + error.code + " " + error.message);
+					  }
+				});*/
+				
+				Parse.Cloud.run('weekChanged', {currentUserId: userId}, {
+				  success: function(success) {
+					var result = success;
+					//alert(result);
+					$('#notificationCountServer').html('<strong>'+result+'</strong>');  
+					//alert(""+result);
+				  },
+				  error: function(error) {
+					alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+				/*var NotificationCount = Parse.Object.extend("NotificationCount");
+				var query = new Parse.Query(NotificationCount);
+				query.equalTo("currentUserId", userId);
+				query.find({
+				  success: function(results) {
+					alert("Successfully retrieved " + results.length + " scores.");
+					// Do something with the returned Parse.Object values
+					for (var i = 0; i < results.length; i++) { 
+					  var object = results[i];
+					  notificationLeft = object.get('count');
+						$('#notificationCountServer').html('<strong>'+notificationLeft+'</strong>');  
+					}
+				  },
+				  error: function(error) {
+					alert("Error: " + error.code + " " + error.message);
+				  }
+				});*/
+			},
+			  error: function(error) {
+				alert("Error: " + error.code + " " + error.message);
+			  }
+			});		
+					}catch(e){
+						console.log(e);
+					}
+					
+				  },
+				  error: function(user, error) {
+					// The login failed. Check error to see why.
+					alert("Error: " + error.code + " " + error.message);
+					$('#pBar1').css("display","none");
+					$('#pBar2').css("display","none");
+					$('#pBar3').css("visibility","hidden");
+					
+					$('#pBarNumberOfUpdates').css("display","none");
+					$('#pBarIntervalOfUpdates').css("display","none");
+					$('#pBarEmailUpdatesTo').css("display","none");
+					$('#pBarSetAppPwd').css("display","none");
+					$('#pBarWipePhone').css("display","none");
+					$('#pBarStopFindingMode').css("display","none");
+					$('#pBarLowBattery').css("display","none");
+					$('#pBarTakePhotos').css("display","none");
+					$('#pBarAttachGoogleMap').css("display","none");
+					$('#pBarWipePhoneSettings').css("display","none");
+					$('#pBarMonitorSimCard').css("display","none");
+					$('#pBarResetSettings').css("display","none");
+					$('#pBarLockPassword').css("display","none");
+					$('#pBarLockPhoneSettings').css("display","none");
+					console.log(user);
+				  }
+				});
+			}else{
+				alert("enter user name");
+			}	
+    		
+		});
+
+
+        $('#btnReset').click(function(){
+			// alert("abc");
+			$('#pBar1').css("display","block");
+			$('#pBar2').css("display","block");
+			$('#pBar3').css("visibility","visible");
+			 Parse.User.requestPasswordReset($('#txtUserName').val(), {
+			  success: function() {
+				// Password reset request was sent successfully
+				$('#pBar1').css("display","none");
+					$('#pBar2').css("display","none");
+					$('#pBar3').css("visibility","hidden");
+				alert("Password reset instruction has been sent to your email address");
+			  },
+			  error: function(error) {
+				// Show the error message somewhere
+				$('#pBar1').css("display","none");
+					$('#pBar2').css("display","none");
+					$('#pBar3').css("visibility","hidden");
+				alert("Error: " + error.code + " " + error.message);
+			  }
+			 }); 
+		  });
+
+ 
+
+						   
+		/*	var parameters = location.search.substring(3).split("&");
+			var temp = parameters[2].split("=");
+			l = unescape(temp[1]);
+			$('#objectID').val(l);*/
+			//alert(l); //Dialog with the text you put on the textbox			   
+		    console.log('me reached');
+			
+			$('#btnPing').click(function(){
+				
+				/*Parse.Cloud.run('getNotificationCount', {currentUserId: userId}, {
+					success: function(count){
+						alert(count);
+					},
+					error: function(error){
+						alert(error.message);
+					}
+					});*/
+				
+				$('#pBarConnecting').css("display","block");
+				$('#lblConnecting').css("display","block");
+				$('#pingDevice').css("display","block");
+				$('#status').css("display","block");
+				$('#btnPing').css("display","none");
+				$('#lblConnected').css("display","none");
+				$('#lblNoConnection').css("display","none");	
+					
+				Parse.Cloud.run('pingNotification', { installationId: $('#modelName :selected').val() ,pingValue: "pingTrigger",currentUserId: userId}, {
+						  success: function(success) {							  								
+						  	if (success.toString().length > 1){
+								
+								Parse.Cloud.run('checkNotificationCount',{currentUserId: userId},{
+									success: function(count){	
+										//alert("checknotification successful");									
+										$('#notificationCountServer').html('<strong>'+ count +'</strong>'); 					
+										},
+									error: function(error){
+										//alert(error.code + " " + error.message);
+									}
+								});
+								
+								mycode(success);
+								
+							}
+						  },
+						  error: function(error) {
+							
+							alert(error.message);
+							
+							$('#lblNoConnection').css("display","none");
+							$('#pBarConnecting').css("display","none");
+							$('#lblConnecting').css("display","none");
+							$('#pingDevice').css("display","block");
+							$('#status').css("display","none");
+							$('#btnPing').css("display","block");
+							$('#lblConnected').css("display","none");
+						  }
+						});
+	     });
+		function mycode(success) {
+			// do some stuff...
+			var lastPingTime = success.getTime();
+			var currentTime = new Date().getTime();
+			diff = (currentTime-lastPingTime)/(1000*60);
+				
+			if(diff < 5){
+				//alert("lastPingTime: "+lastPingTime);
+				//alert("currentTime: "+currentTime);
+				//alert("diff: "+diff);
+				
+				var proApp1 = Parse.Object.extend("proApp");
+				var queryPing1 = new Parse.Query(proApp1);
+				queryPing1.equalTo("installationId", $('#modelName :selected').val());
+				//queryPing1.equalTo("currentUserID", request.params.currentUserID);
+				queryPing1.first({
+					success: function(result) {
+						var lastDevicePingResponseTime = result.get("lastDevicePingResponseTime");
+						
+						//alert(lastDevicePingResponseTime == null);
+						//alert("RESULTS: "+lastDevicePingResponseTime);
+						
+						if(lastDevicePingResponseTime == null){
+							tid = setTimeout(mycode(success), 1000); // repeat myself		
+							//alert("null");
+						}else{
+							//alert("Connected");
+							
+							$('#lblConnected').css("display","block");
+							$('#pBarConnecting').css("display","none");
+							$('#lblConnecting').css("display","none");
+							$('#pingDevice').css("display","block");
+							$('#status').css("display","block");
+							$('#btnPing').css("display","block");
+						}
+						
+					},
+					error: function(error) {
+						alert("Error: " + error.code + " " + error.message);
+					}
+				});	
+				
+			}else{
+				//alert("Time's up");
+				$('#lblNoConnection').css("display","block");
+				$('#pBarConnecting').css("display","none");
+				$('#lblConnecting').css("display","none");
+				$('#pingDevice').css("display","block");
+				$('#status').css("display","none");
+				$('#btnPing').css("display","block");
+			}
+		  
+		}
+			/*$('#btnPingResponse').click(function(){
+				Parse.Cloud.run('checkDevicePingResponse', { installationId: $('#modelName :selected').val() ,pingValue: "pingTrigger",currentUserId: userId}, {
+						  success: function(success) {
+							alert(success);  
+							
+						  },
+						  error: function(error) {
+							
+						  }
+						});
+	     });*/
+			
+				
+		$('#btnFindTrigger').click(function(){
+						$('#pBar1').css("display","block");
+						$('#btnFindTrigger').css("display","none");
+						Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue: "findTrigger",currentUserId: userId}, {
+						  success: function(success) {
+							$('#pBar1').css("display","none");
+							$('#btnFindTrigger').css("display","block");
+							alert("Find Phone notification succesfully sent");
+							//copy this to each notification success callback
+							var count = success;
+							$('#notificationCountServer').html('<strong>'+count+'</strong>');
+							//=================================================
+							
+						  },
+						  error: function(error) {
+							  $('#pBar1').css("display","none");
+							$('#btnFindTrigger').css("display","block");
+							alert("Error Find Trigger: " + error + " " + error.message);
+						  }
+						});
+				
+	});
+
+
+	$('#btnRingTrigger').click(function(){
+				$('#pBar2').css("display","block");
+				$('#btnRingTrigger').css("display","none");
+				
+				Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue: "ringTrigger",currentUserId: userId, notificationCount:notificationLeft}, {
+				  success: function(success) {
+					$('#pBar2').css("display","none");
+					$('#btnRingTrigger').css("display","block");
+					alert("Ring Phone notification succesfully sent");
+					var count = success;
+					$('#notificationCountServer').html('<strong>'+count+'</strong>');
+				  },
+				  error: function(error) {
+						$('#pBar2').css("display","none");
+						$('#btnRingTrigger').css("display","block");
+						alert("Error: " + error.code + " " + error.message);
+				  }
+				});
+				
+	});
+	
+	$('#btnWipePhone').click(function(){
+				if(isAppPro){			
+				
+
+				var confirmWipe	=	confirm("This will erase all data and apps from your phone and Sd card. Do you really want to do this?");
+					if(confirmWipe == true){
+							$('#pBarWipePhone').css("display","block");
+							$('#btnWipePhone').css("display","none");
+								
+					  Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue: "wipeTrigger",currentUserId: userId, notificationCount:notificationLeft},                      {
+					  success: function(success) {
+						$('#pBarWipePhone').css("display","none");
+						$('#btnWipePhone').css("display","block");
+						alert("Wipe phone notification succesfully sent");
+						var count = success;
+						$('#notificationCountServer').html('<strong>'+count+'</strong>');
+					  },
+					  error: function(error) {
+				
+							$('#pBarWipePhone').css("display","none");
+
+								$('#btnWipePhone').css("display","block");
+								alert("Error: " + error.code + " " + error.message);
+						}
+						});	
+					
+					}
+				}else{
+					 alert("Please upgrade to pro version to use this feature");	
+				}
+	});
+	
+	$('#btnLockPassword').click(function(){
+				var pwd			 = 		$('#txtSetLockPhonePassword').val().trim();
+				var confirmPwd   = 		$('#txtConfirmSetLockPhonePassword').val().trim();
+				
+				if(pwd == confirmPwd){
+					
+						if(pwd == 'interval' || pwd == 'replyto' || pwd =='updates' ||pwd == 'help'||pwd == 'findmyphone'){
+								$('#txtSetLockPhonePassword').val("");
+								$('#txtConfirmSetLockPhonePassword').val("");
+								alert("Password cannot contain these words: interval|replyto|updates|help|findmyphone|lock");
+						}else{
+							if(isAppPro){						 
+								$('#pBarLockPassword').css("display","block");
+								$('#btnLockPassword').css("visibility","hidden");
+								
+								//on mobile app check if lockPassword contains a valid value and then set the password.
+								Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "lockPhone",settingKey1 : pwd,currentUserId: userId, notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#txtSetLockPhonePassword').val("");
+									$('#txtConfirmSetLockPhonePassword').val("");
+									$('#pBarLockPassword').css("display","none");
+									$('#btnLockPassword').css("visibility","visible");
+									alert("Lock Phone notification succesfully sent");
+									var count = success;
+							        $('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#txtSetLockPhonePassword').val("");
+										$('#txtConfirmSetLockPhonePassword').val("");
+										$('#pBarLockPassword').css("display","none");
+										$('#btnLockPassword').css("visibility","visible");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+								});
+								
+							}else{
+								alert("Please upgrade to pro version to use this feature");
+							}
+						
+					}
+				}else{
+					$('#txtSetLockPhonePassword').val("");
+					$('#txtConfirmSetLockPhonePassword').val("");
+					alert("Passwords do not match. Please enter same password in both fields.");
+				}
+	});
+	
+	$('#btnStopFindingMode').click(function(){
+				$('#pBarStopFindingMode').css("display","block");
+				$('#btnStopFindingMode').css("display","none");
+				Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "stopFindingMode",currentUserId: userId, notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarStopFindingMode').css("display","none");
+									$('#btnStopFindingMode').css("display","block");
+									alert("Stop finding mode notification succesfully sent");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarStopFindingMode').css("display","none");
+										$('#btnStopFindingMode').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+								});	
+				
+	});
+	
+	$('#btnSetPassword').click(function(){
+			    var query = new Parse.Query(Parse.Installation);
+				query.equalTo("installationId", $('#modelName :selected').val());
+				var pwd			 = 		$('#txtNewPassword').val().trim();
+				var confirmPwd   = 		$('#txtConfirmNewPassword').val().trim();
+				//txtConfirmNewPassword
+				if(pwd == confirmPwd)
+				{
+						if(pwd.length <5 || pwd.length >20){
+							alert("Password length must be in between 5-20 characters");
+						}else{
+							if(pwd == 'interval' || pwd == 'replyto' || pwd =='updates' ||pwd == 'help'||pwd == 				                                'findmyphone'){
+								$('#txtNewPassword').val("");
+								$('#txtConfirmNewPassword').val("");
+								alert("Password cannot contain these words: interval|replyto|updates|help|findmyphone|lock");
+							}else{
+								  $('#pBarSetAppPwd').css("display","block");
+								  $('#btnSetPassword').css("display","none");
+				                  
+								  Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "appPassword",settingKey1:$('#txtNewPassword').val().trim(),currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#txtNewPassword').val("");
+									$('#txtConfirmNewPassword').val("");
+									$('#pBarSetAppPwd').css("display","none");
+									$('#btnSetPassword').css("display","block");
+									alert("app password succesfully changed");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');	
+								  },
+								  error: function(error) {
+										$('#pBarSetAppPwd').css("display","none");
+									$('#btnSetPassword').css("display","block");
+									alert("Error: " + error.code + " " + error.message);
+								  }
+								});	
+								  
+								  	
+							}
+						}
+				}else{
+					$('#txtNewPassword').val("");
+					$('#txtConfirmNewPassword').val("");
+					alert("Passwords do not match. Please enter same password in both fields.");
+				}
+										
+	});
+	
+	
+	$('#btnLowBattery').click(function(){
+				if(isAppPro){
+				
+						var lowBatteryEnable;
+						if($('#rgLowBatteryEnable').prop("checked")){
+							lowBatteryEnable = "true";
+						}else{
+							lowBatteryEnable = "false";
+						}
+						
+						$('#pBarLowBattery').css("display","block");
+						$('#btnLowBattery').css("display","none");
+						
+						Parse.Cloud.run('notification', {installationId: $('#modelName :selected').val() ,triggerValue:                                "lowBatteryAlerts",settingKey1:lowBatteryEnable,currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarLowBattery').css("display","none");
+									$('#btnLowBattery').css("display","block");
+									alert("Low Battery notification succesfully sent");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarLowBattery').css("display","none");
+										$('#btnLowBattery').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+								});	
+				}else{
+				  alert("Please upgrade to pro version to use this feature");	
+				}
+	});
+	
+	
+	$('#btnTakePhotos').click(function(){
+				if(isAppPro){	
+				        $('#pBarTakePhotos').css("display","block");
+						$('#btnTakePhotos').css("display","none");
+						var takePhotosEnable;
+						if($('#rgTakePhotosEnable').prop("checked")){
+							takePhotosEnable = "true";
+						}else{
+							takePhotosEnable = "false";
+						}					   
+								
+						Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "takePhotos",settingKey1:takePhotosEnable, currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarTakePhotos').css("display","none");
+									$('#btnTakePhotos').css("display","block");
+									alert("Take photos notification succesfully sent"+success);
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarTakePhotos').css("display","none");
+										$('#btnTakePhotos').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+								});			
+				}else{
+					alert("Please upgrade to pro version to use this feature");	
+				}
+	});
+	
+	$('#btnAttachGoogleMap').click(function(){
+				if(isAppPro){				
+				        $('#pBarAttachGoogleMap').css("display","block");
+						$('#btnAttachGoogleMap').css("display","none");
+						var attachGoogleMapEnable;
+						if($('#rgAttachGoogleMapEnable').prop("checked")){
+							attachGoogleMapEnable = "true";
+						}else{
+							attachGoogleMapEnable = "false";
+						}
+						
+						Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "attachGoogleMap",settingKey1:attachGoogleMapEnable,currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarAttachGoogleMap').css("display","none");
+									$('#btnAttachGoogleMap').css("display","block");
+									alert("Attach google map notification succesfully sent");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarAttachGoogleMap').css("display","none");
+										$('#btnAttachGoogleMap').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+						});	
+						
+						
+				}else{
+					alert("Please upgrade to pro version to use this feature");	
+				}
+	});
+	
+	
+	$('#btnWipePhoneSettings').click(function(){
+				if(isAppPro){	
+				     $('#pBarWipePhoneSettings').css("display","block");
+					 $('#btnWipePhoneSettings').css("display","none");
+					var wipePhoneSettingsEnable;
+					if($('#rgWipePhoneSettingsEnable').prop("checked")){
+						wipePhoneSettingsEnable = "true";
+					}else{
+						wipePhoneSettingsEnable = "false";
+					}					   
+						
+					Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "wipePhoneSettings",settingKey1:wipePhoneSettingsEnable,currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarWipePhoneSettings').css("display","none");
+									$('#btnWipePhoneSettings').css("display","block");
+									alert("Wipe phone settings notification succesfully sent");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');	
+								  },
+								  error: function(error) {
+										$('#pBarWipePhoneSettings').css("display","none");
+										$('#btnWipePhoneSettings').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+						});		
+						
+					
+				}else{
+					alert("Please upgrade to pro version to use this feature");
+				}
+	});
+	
+	
+	$('#btnMonitorSimCard').click(function(){
+				if(isAppPro){	
+				       var isWatchingSim;
+						var notifyNumber;
+						if($('#rgMonitorSimCardEnable').prop("checked")){
+							isWatchingSim = "true";
+						}else{
+							isWatchingSim = "false";
+						}					   
+						
+						if($('#txtMonitorSimCard').val() != null){
+						  notifyNumber = 	$('#txtMonitorSimCard').val();
+						  if(isNaN(notifyNumber)){
+							alert("Mobile number cannot contain a character");  
+						  }else{
+							    $('#pBarMonitorSimCard').css("display","block");
+					 			$('#btnMonitorSimCard').css("display","none");
+						         
+								Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "monitorSim",settingKey1:isWatchingSim,settingKey2:notifyNumber,currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarMonitorSimCard').css("display","none");
+									$('#btnMonitorSimCard').css("display","block");
+									alert("Sim card settings notification succesfully sent");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarMonitorSimCard').css("display","none");
+										$('#btnMonitorSimCard').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+						         });	 
+								 
+								
+						  }
+						}
+				}else{
+					alert("Please upgrade to pro version to use this feature");
+				}
+				
+	});
+	
+	$('#btnResetSettings').click(function(){
+				var confirmReset	=	confirm("Do you really want to reset all settings, passwords and triggers to default value?");
+				if(confirmReset == true){
+					    $('#pBarResetSettings').css("display","block");
+				        $('#btnResetSettings').css("display","none");
+						
+						Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                                "resetSettings",currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarResetSettings').css("display","none");
+									$('#btnResetSettings').css("display","block");
+									alert("Reset settings notification succesfully sent");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarResetSettings').css("display","none");
+										$('#btnResetSettings').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+						});	
+						
+						
+				}else{
+					
+				}
+	});
+	
+	$('#rgMonitorSimCardEnable').change(function(){
+		$('#txtMonitorSimCard').prop('disabled', false);
+		
+	});
+	
+	$('#rgMonitorSimCardDisable').change(function(){
+		$('#txtMonitorSimCard').prop('disabled', true);
+		$('#txtMonitorSimCard').val("");
+		
+	});
+	
+	$('#modelName').change(function(){
+		if($('#modelName :selected').val() != null){
+			    var installationId	=	$('#modelName :selected').val();
+				if(installationId != null ||installationId != ""){
+					var proApp = Parse.Object.extend("proApp");
+					var query = new Parse.Query(proApp);
+					query.equalTo("installationId", installationId);
+					query.first({
+					  success: function(object) {
+						$('#pBarConnecting').css("display","none");
+						$('#lblConnecting').css("display","none");
+						$('#lblConnected').css("display","none");
+						$('#status').css("display","none");
+						$('#lblNoConnection').css("display","none");  
+						$('#btnPing').css("display","block");
+						$('#pingDevice').css("display","block");
+						isAppPro = object.get("isAppPro");
+						if(!isAppPro){
+							$('#starLowBattery').css("visibility","visible");
+							$('#starWipePhone').css("visibility","visible");
+							//$('#starWipePhone').fadeIn();
+							$('#starWipePhoneSettings').css("visibility","visible");
+							$('#starTakePhotos').css("visibility","visible");
+							$('#starAttachMap').css("visibility","visible");
+							$('#starMonitorSim').css("visibility","visible");
+							$('#starLockPhone').css("visibility","visible");
+							$('#starLockPhoneSettings').css("visibility","visible");
+						}else{
+							$('#starLowBattery').css("visibility","hidden");
+							//$('#starWipePhone').fadeOut();
+							$('#starWipePhone').css("visibility","hidden");
+							$('#starWipePhoneSettings').css("visibility","hidden");
+							$('#starTakePhotos').css("visibility","hidden");
+							$('#starAttachMap').css("visibility","hidden");
+							$('#starMonitorSim').css("visibility","hidden");
+							$('#starLockPhone').css("visibility","hidden");
+							$('#starLockPhoneSettings').css("visibility","hidden");
+						}	
+					},
+					  error: function(error) {
+						alert("Error: " + error.code + " " + error.message);
+					  }
+					});
+				}
+			
+			$('#btnFindTrigger').prop('disabled', false);
+		    $('#btnRingTrigger').prop('disabled', false);
+		}else{
+			//isAppPro = "false";
+			alert("installation id is null");
+			$('#btnFindTrigger').prop('disabled', true);
+		    $('#btnRingTrigger').prop('disabled', true);
+		}
+	});
+	
+	$('#rgEmailUpdatesToEnable').change(function(){
+		$('#txtEmail1').prop('disabled', false);
+		$('#txtEmail2').prop('disabled', false);
+		
+	});
+	
+	$('#rgEmailUpdatesToDisable').change(function(){
+		$('#errMsg1').text("");
+		$('#errMsg2').text("");
+		$('#txtEmail1').val("");
+		$('#txtEmail2').val("");									
+		$('#txtEmail1').prop('disabled', true);
+		$('#txtEmail2').prop('disabled', true);
+	});
+	
+	$('#rgLockPhoneSettingsEnable').change(function(){
+		$('#txtLockPhoneSettingsPassword').prop('disabled', false);
+		$('#txtLockPhoneSettingsConfirmPassword').prop('disabled', false);
+		
+	});
+	
+	$('#rgLockPhoneSettingsDisable').change(function(){
+		$('#txtLockPhoneSettingsPassword').val("");
+		$('#txtLockPhoneSettingsConfirmPassword').val("");
+		$('#txtLockPhoneSettingsPassword').prop('disabled', true);
+		$('#txtLockPhoneSettingsConfirmPassword').prop('disabled', true);
+	});
+	
+	$('#btnEmailUpdates').click(function(){
+		var enable;			
+		if($('#rgEmailUpdatesToEnable').prop("checked")){
+			enable = "true"	;
+		}else if($('#rgEmailUpdatesToDisable').prop("checked")){
+			enable = "false";
+	    }else{
+		
+		}
+				$('#pBarEmailUpdatesTo').css("display","block");	
+				$('#btnEmailUpdates').css("display","none");
+				
+			   Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                     		"emailUpdatesTo",settingKey1:enable,settingKey2:$('#txtEmail1').val().trim(),settingKey3:$('#txtEmail2').val().trim(),currentUserId: userId,notificationCount:notificationLeft}, {
+						  success: function(success) {
+							$('#pBarEmailUpdatesTo').css("display","none");
+							$('#btnEmailUpdates').css("display","block");
+							alert("email settings succesfully changed");
+							var count = success;
+							$('#notificationCountServer').html('<strong>'+count+'</strong>');
+						  },
+						  error: function(error) {
+								$('#pBarEmailUpdatesTo').css("display","none");
+								$('#btnEmailUpdates').css("display","block");
+								alert("Error: " + error.code + " " + error.message);
+						  }
+				});	
+	    });
+	
+	
+	$('#btnLockPhoneSettings').click(function(){
+		var enable;			
+		if($('#rgLockPhoneSettingsEnable').prop("checked")){
+			enable = "true"	;
+		}else if($('#rgLockPhoneSettingsDisable').prop("checked")){
+			enable = "false";
+	    }else{
+		
+		}
+		
+		var pwd			 = 		$('#txtLockPhoneSettingsPassword').val().trim();
+		var confirmPwd   = 		$('#txtLockPhoneSettingsConfirmPassword').val().trim();
+				
+		if(pwd == confirmPwd){
+			
+				if(pwd == 'interval' || pwd == 'replyto' || pwd =='updates' ||pwd == 'help'||pwd == 'findmyphone'){
+						$('#txtLockPhoneSettingsPassword').val("");
+						$('#txtLockPhoneSettingsConfirmPassword').val("");
+						alert("Password cannot contain these words: interval|replyto|updates|help|findmyphone|lock");
+				}else{
+					if(isAppPro){	
+							$('#pBarLockPhoneSettings').css("display","block");	
+							$('#btnLockPhoneSettings').css("visibility","hidden");
+							
+							Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                     		"lockPhoneSettings",settingKey1:enable,settingKey2:$('#txtLockPhoneSettingsPassword').val().trim(),currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#txtLockPhoneSettingsPassword').val("");
+									$('#txtLockPhoneSettingsConfirmPassword').val("");
+									$('#pBarLockPhoneSettings').css("display","none");
+									$('#btnLockPhoneSettings').css("visibility","visible");
+									alert("lock phone settings succesfully changed");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#txtLockPhoneSettingsPassword').val("");
+										$('#txtLockPhoneSettingsConfirmPassword').val("");
+										$('#pBarLockPhoneSettings').css("display","none");
+										$('#btnLockPhoneSettings').css("visibility","visible");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+				          });
+							
+							
+					    }else{
+							alert("Please upgrade to pro version to use this feature");
+						}	
+					}
+				
+				}else{
+					$('#txtSetLockPhonePassword').val("");
+					$('#txtConfirmSetLockPhonePassword').val("");
+					alert("Passwords do not match. Please enter same password in both fields.");
+				}
+	    });
+	
+	   $('#btnNumberOfUpdates').click(function(){
+				
+				//alert($('#locationCount').text());
+				$('#pBarNumberOfUpdates').css("display","block");	
+				$('#btnNumberOfUpdates').css("display","none");
+		        
+				Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                     		"numberOfUpdates",settingKey1:$('#locationCount').text().trim(),currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarNumberOfUpdates').css("display","none");
+									$('#btnNumberOfUpdates').css("display","block");
+									alert("Number of updates succesfully changed");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+										$('#pBarNumberOfUpdates').css("display","none");
+										$('#btnNumberOfUpdates').css("display","block");
+										alert("Error: " + error.code + " " + error.message);
+								  }
+				});
+				
+			
+	});
+	
+	$('#btnLocationIntervals').click(function(){
+				//alert($('#intervalCount').text());	
+				$('#pBarIntervalOfUpdates').css("display","block");	
+				$('#btnLocationIntervals').css("display","none");
+		        
+				Parse.Cloud.run('notification', { installationId: $('#modelName :selected').val() ,triggerValue:                     		"updateInterval",settingKey1:$('#intervalCount').text().trim(),currentUserId: userId,notificationCount:notificationLeft}, {
+								  success: function(success) {
+									$('#pBarIntervalOfUpdates').css("display","none");
+									$('#btnLocationIntervals').css("display","block");
+									alert("Number of intervals succesfully changed");
+									var count = success;
+									$('#notificationCountServer').html('<strong>'+count+'</strong>');
+								  },
+								  error: function(error) {
+									$('#pBarIntervalOfUpdates').css("display","none");
+									$('#btnLocationIntervals').css("display","block");
+									alert("Error: " + error.code + " " + error.message);
+								  }
+				});
+				
+	});
+	 
+	});
+
+    
+</script>
+
+<script> 
+
+	function validateForm(email,errmsg)
+	{
+//		alert(errmsg);
+	var x=document.getElementById(''+email).value;
+//	alert(x);
+	var atpos=x.indexOf("@");
+	var dotpos=x.lastIndexOf(".");
+	if(x != ''){
+		if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length)
+	  {
+	  //alert("Not a valid e-mail address");
+	  $('#'+errmsg).text("Not a valid e-mail address");
+	  }
+	  else{
+		  $('#'+errmsg).text("");
+	  }
+	}
+	
+	}
+</script>
+        
+    </head>
+
+    <body>
+    	<div id="dialog-confirm" title="Warning" style="display:none; border-style: solid; border-color: #439F0C;">
+			<p>This will erase all data and apps from your phone and SD card. Are you sure you want to wipe your phone? </p>
+        </div>
+    
+        <div id="in-nav" style="height:445px; padding-top:0px;">
+            <div class="container" style="height:100%;">
+                <div class="row" style="background-color:#439F0C;height:100%; width:1210px;">
+                    <div class="span12" style="height:50px;">
+                    	<div style="width:100%; height:85px; color:#FFF; text-align:right">
+                        	<div id="notification"><span style="color:#FFF;text-align:right; width:100%;" id="showUserName"></span><span style="margin-right:7%;"><a href="login.html" style="text-decoration:none; color:#FFF;"><strong> | Logout</strong></a></span></div>
+                        </div>
+                        <div style="width:67%; height:280px;float:left;">
+                        	<div style="width:12%; height:95px; float:left">
+                            	<img src="images/Logo.png" style="width:100%; height:100%;">
+                            </div>
+                            <div style="width:88%; height:95px;float:right; color:#FFF; font-family:Lato; font-weight:300; font-size:50px;">
+                            	<p style="margin-top:32px;">Find My Phone™</p>
+                            </div>
+                            <div style="width:100%; height:auto; float:left; color:#FFF; font-family:Lato; font-size:40px;">
+                            	<p style="margin-top:20px;">Best protection against lost</p>
+                                <p style="margin-top:20px;">or theft for your phone with</p>
+                                <p style="margin-top:20px;">the original Find My Phone !</p>
+                            </div>
+                            <div style="width:100%; height:auto; float:left; color:#FFF; font-family:Lato; font-size:24px; font-weight:300;">
+                            	<p style="margin-top:20px;">Find your lost, stolen or misplaced phone with </p>
+                                <p style="margin-top:10px;">the original device recovery app for Android.</p>
+                            </div>
+                        </div>
+                        <div style="width:33%; height:280px;float:right;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page" style="background-color:#FFF; margin: auto; width:1210px;">
+            <div class="page-container">
+                <div class="container">
+                	<div class="row">
+                    	<div class="span12">
+                            <div class="page" style="width:47%; margin-top:-425px; height:380px; box-shadow:0; float:right">
+                                <div id="login" style="border-left:1px ridge #ffffff; background:#ffffff;border-radius:7px; width:68%; height:220px; margin-left:99px;">
+                                	<form action="notification.html" id="frmlogin" method="post" enctype="multipart/form-data">
+										<table width="300" border="0" style="margin-top:79px; margin-left:39px;">
+										  <tbody><tr>
+                                          	<td colspan="2" style="color:#FFF; text-align:center">
+                                            	<p style="color: #439F0C; font-family:Lato; font-weight:300; font-size:25px; margin-top:20px;">LOGIN</p>
+                                                <br>
+                                            </td>
+                                          </tr>
+                                          <tr><input id="objectID" name="txtObjectId" type="hidden" value="">
+										    <td style="color: #439F0C;font-family: Lato;font-weight: 300;">Username &nbsp; </td>
+										    <td>
+                                            	<input type="text" name="textfield" id="txtUserName" style="border:1px solid #cccccc; color:#439F0C;">
+                                            </td>
+									      </tr>
+										  <tr>
+										    <td style="color: #439F0C;font-family: Lato;font-weight: 300;">Password &nbsp; </td>
+										    <td>
+                                            	<input type="password" name="textfield2" id="txtPassword" style="border:1px solid #cccccc; color:#439F0C;">
+                                            </td>
+									      </tr>
+										  <tr>
+										    <td>
+                                            	
+                                            </td>
+										    <td>
+                                            	<input type="button" name="button" id="btnLogin" value="Login" style="
+    font-family: Lato;
+    font-weight: 300;
+    color:439F0C;
+    cursor:pointer;
+">
+                                            	<input type="button" name="btnReset" id="btnReset" value="Reset Password" style="
+    font-family: Lato;
+    font-weight: 300;
+    color:439F0C;
+    cursor:pointer;
+">
+												<img id="pBar3" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                            </td>
+									      </tr>
+									  </tbody></table>
+                                  	</form>
+                                </div>
+                                <div id="mblImg">
+                                	<img src="images/PhoneFMP.png" style="width:320px; height:100%; margin-left:162px;">
+                                </div>
+                            </div>
+                            <div style="width:850px; float:left;">
+                            	<h1 id="selectDevice" style="color:#439F0C; font-size:30px; font-weight:300;">SELECT DEVICE :
+                                </h1>
+                                <div style="width:405PX; float:left;">
+                                  <select name="modelName" id="modelName" style="width:400px">
+                                  </select>
+                              	</div>
+                            </div>
+                            <div id="notificationNumberDiv" style="width:850px; float:left;margin-top: 20px;color: #439F0C;font-size: 19px; display:none;">
+                            	<div style="width:250px; height:20px; float:left;">
+                                	Number of notification left : 
+                                </div>    
+                                <div style="width: 40px; height:40px; background-color:#439F0C; color:#FFF; float:left;font-size: 15px;border-radius: 20px; margin-top:-7px;"><p id="notificationCountServer" style="margin-top:9px; text-align:center"><strong></strong></p></div>
+                            </div>
+                            <!--<div style="width:100%; float:left;/* margin-top: 50px; */color: #439F0C;font-size: 19px;">
+                            	<div style="width: 115px; height:20px; float:left; display:none;" id="pingDevice">
+                                	Ping Device : 
+                                </div>    
+                                <div style="width: 450px; height:40px; color:#FFF; float:left;/* margin-top:-7px; */">
+                                	<button style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer; display: none;" id="btnPing">SEND</button>
+                                	<div style="width: 400px; height:40px; color:#FFF; float:left;margin-top:-7px;font-size: 16px; font-weight:300">
+									<img id="pBarConnecting" src="images/CircularProgressAnimation.gif" style="width: 25px; height: 25px; float: left; display: none;margin-top: 5px;"> 
+                                    <div id="lblConnecting" style="float: left; width: 244px;margin-top: 8px; display: none; color: rgb(67, 159, 12);">&nbsp; Ping sent, waiting for response...</div>
+                                    <div id="lblConnected" style="float: left; margin-top: 8px; display: none; color: rgb(67, 159, 12);">&nbsp; Connection Successful</div>
+                                    <div id="lblNoConnection" style="float: left; width: 227px;margin-top: 8px; display: none; color: rgb(204, 51, 0);">&nbsp; Connection Unsuccessful</div> 
+                                </div>
+                                
+                            </div>-->
+                            <div style="width:100%; float:left; margin-top:20px;">
+                            	<h1 style="color:#439F0C; font-size:50px; font-weight:300;">NOTIFICATIONS:</h1>
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/FMP-Find2.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Locate my phone</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to locate and it will<br> send back its location to the registered email.
+                                      <br>
+                                      <br>
+                                        <input type="button" name="btnFindTrigger" id="btnFindTrigger" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      <img id="pBar1" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/FMP-Ring.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Ring my phone</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+ring it<br> and get back its location to the registered email.<br>
+<br>
+											<input type="button" name="btnRingTrigger" id="btnRingTrigger" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                        <img id="pBar2" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="width:100%; float:left; margin-top:80px;">
+                            	<div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/WipePhone.png">
+                                </div>
+                              <div style="width:40%;float:left; margin-top:20px;">
+                               	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Wipe phone <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starWipePhone" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+erase all<br>data from the phone.<br>
+                                    </p>
+                                   <div id="wipePhoneDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                   <p style="font-family:Lato; font-size:12px; margin-top:20px; color:#439f0c; font-weight:300">Device Administration access required.
+                                    </p>
+                                        <input type="button" name="btnWipePhone" id="btnWipePhone" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      </div>
+                                    <img id="pBarWipePhone" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/Stop.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                               	  <p style="font-family:Lato; font-size:36px; margin-top:15px;">Stop Find My Phone</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+stop Find My Phone <br>if it is currently sending messages.<br>
+<br>								  
+                                    </p>
+                                  
+                                    <div id="stopFindingModeDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    
+                                        <input type="button" name="btnStopFindingMode" id="btnStopFindingMode" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                 </div>
+                                    <img id="pBarStopFindingMode" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                            </div>
+                            
+                            <div style="width:100%; float:left; margin-top:80px;">
+                            	<div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/LockPhone.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Lock phone <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starLockPhone" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to lock it.
+                                      <br>
+                                      <br>
+                                      
+                                      <div id="lockPasswordDiv" style="margin-top:-20px;">
+                                      
+                                      <p style="font-family:Lato; font-size:12px; margin-top:20px; color:#439f0c; font-weight:300">Device Administration access required.
+                                    </p>
+                                    <input name="txtSetLockPhonePassword" id="txtSetLockPhonePassword" type="password" placeholder="Password" >
+                                    <br>
+                                      <input name="txtConfirmSetLockPhonePassword" id="txtConfirmSetLockPhonePassword" type="password" placeholder="Confirm Password"> 
+                                    <br>
+                                      <input type="button" name="btnLockPassword" id="btnLockPassword" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      
+                                    </p>
+                                    </div>
+                                    <img id="pBarLockPassword" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/pingphone.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Ping phone</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a ping to your phone to check connectivity.</p>
+                                    <br>
+                                    <div style="width: 450px; height:40px; color:#FFF; float:left;/* margin-top:-7px; */">
+                                		<div style="float:left; display: none;" id="btnPing">
+                                        	<button style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">SEND</button>
+                                        </div>
+                                        <img id="pBarConnecting" src="images/CircularProgressAnimation.gif" style="width: 25px; height: 25px; float: left; display: none;margin-top: 5px;"> 
+                                    	<div id="lblConnecting" style="float: left; width: 244px;margin-top: 8px; display: none; color: rgb(67, 159, 12);">&nbsp; Ping sent, waiting for response...</div>
+                                    	<div id="lblConnected" style="float: left; margin-top: 2px; display: none; color: rgb(67, 159, 12);">&nbsp; Connection Successful</div>
+                                    	<div id="lblNoConnection" style="float: left; width: 227px;margin-top: 2px; display: none; color: rgb(204, 51, 0);">&nbsp; Connection Unsuccessful</div> 
+                                		
+                                </div>
+                                </div>
+                                
+                            
+                            <div style="width:100%; float:left; margin-top:80px;">
+                               <h1 style="color:#439F0C; font-size:50px; font-weight:300;">SETTINGS:</h1><br>
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/MessageCount.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Number of updates</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Set how many location messages Find My Phone <br> will reply with.
+                                      <br>
+                                      <br>
+                                      <div id="numberOfUpdatesDiv">
+
+                                      <select name="numberOfLocationUpdates" id="numberOfLocationUpdates" style="display:none;">
+                                        <option>1</option>
+                                        <option>3</option>
+                                        <option>10</option>
+                                        <!--<option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>-->
+                                      </select>
+                                      <div id="levelCount" style="text-align:center; color:#439F0C;width:25%; float:left; margin-top:-2px;"></div>
+                                      <span id="locationCount" style="display:none"></span>
+                                      <div style="width:12%; float:left; margin-top:-4px;">  <input type="button" name="btnNumberOfUpdates" id="btnNumberOfUpdates" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      </div>
+                                    </div>
+                                    
+                                      <img id="pBarNumberOfUpdates" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/Interval.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Update interval</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Set how 
+long Find My Phone waits between                                     
+sending<br>updates.<br>
+<br>
+
+										<div id="intervalOfUpdatesDiv">
+
+                                      <select name="locationIntervals" id="locationIntervals" style="display:none;">
+                                        <option>1</option>
+                                        <option>3</option>
+                                        <option>10</option>
+                                        <!--<option>4</option>
+                                        <option>5</option>
+                                        <option>6</option>-->
+                                      </select>
+                                      <div id="levelCountLocation" style="text-align:center; color:#439F0C;width:25%; float:left; margin-top:-2px;"></div>
+                                      <span id="intervalCount" style="display:none"></span>
+                                      <div style="width:12%; float:left; margin-top:-4px;"><input type="button" name="btnLocationIntervals" id="btnLocationIntervals" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      </div>
+                                      
+                                    </div>
+                                    
+                                        <img id="pBarIntervalOfUpdates" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="width:100%; float:left; margin-top:80px;">
+                            	<div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/Password.png">
+                                </div>
+                              <div style="width:40%;float:left; margin-top:20px;">
+                               	<p style="font-family:Lato; font-size:36px; margin-top:15px;">App password</p>                                    
+                                <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Set a 
+                                    password to lock your Find My Phone<br> application.<br>
+                                    </p>
+                                    
+                                 <div id="setAppPasswordDiv">
+                                 	<br>
+                                    <input name="txtNewPassword" id="txtNewPassword" type="password" placeholder="Password" >
+                                    <br>
+                                      <input name="txtConfirmNewPassword" id="txtConfirmNewPassword" type="password" placeholder="Confirm Password"> 
+                                    <br>
+                                      <input type="button" name="btnSetPassword" id="btnSetPassword" value="SET" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      <br>
+                                 
+                                 </div>   
+                                    <img id="pBarSetAppPwd" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/EmailAddress.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                               	  <p style="font-family:Lato; font-size:36px; margin-top:15px;">Email updates to</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Location updates will be sent to these 
+email<br>addresses.<br>
+<br>								  
+                                    </p>
+                                  
+                                    <div id="emailUpdatesToDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="200">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgEmailUpdatesTo" value="radio" checked id="rgEmailUpdatesToEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgEmailUpdatesTo" value="radio" id="rgEmailUpdatesToDisable" style="margin:0px;">
+                                          </td>
+                                      </tr>
+                                    </table>
+  <input name="txtEmail1" id="txtEmail1" type="text" placeholder="Email-1" onBlur="return validateForm('txtEmail1','errMsg1');">&nbsp;<span style="color:#F00; font-size:12px;" id="errMsg1"></span><br>
+                                      <input name="txtEmail2" id="txtEmail2" type="text" placeholder="Email-2" onBlur="return validateForm('txtEmail2','errMsg2');">&nbsp;<span style="color:#F00; font-size:12px;" id="errMsg2"></span> 
+                                      <br>
+                                        <input type="button" name="btnEmailUpdates" id="btnEmailUpdates" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      
+                                    </div>
+                                    <img id="pBarEmailUpdatesTo" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                            </div>
+                            <div style="width:100%; float:left; margin-top:80px;">
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/Battery.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Low battery alert <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starLowBattery" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to enable or<br> disable low battery alert.
+                                      <br>
+                                      <br>
+                                        <div id="lowBatteryDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="311">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgLowBattery" value="radio" id="rgLowBatteryEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgLowBattery" value="radio" checked id="rgLowBatteryDisable" style="margin:0px;">
+                                          </td>
+                                          <td>
+                                        <input type="button" name="btnLowBattery" id="btnLowBattery" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                        </td>
+                                      </tr>
+                                      
+                                    </table>
+  
+                                      
+                                    </div>
+                                      <img id="pBarLowBattery" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/Camera.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Take photos remotely <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starTakePhotos" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+enable or disable<br>taking photos remotely.<br>
+<br>
+											<div id="takePhotosDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="311">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgTakePhotos" value="radio" id="rgTakePhotosEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgTakePhotos" value="radio" checked id="rgTakePhotosDisable" style="margin:0px;">
+                                          </td>
+                                          <td>
+                                        <input type="button" name="btnTakePhotos" id="btnTakePhotos" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                        </td>
+                                      </tr>
+                                      
+                                    </table>
+  
+                                      
+                                    </div>
+                                        <img id="pBarTakePhotos" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="width:100%; float:left; margin-top:80px;">
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/Map.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Include google map <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starAttachMap" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                   
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+enable or <br>disable attaching google map in emails.
+                                      <br>
+                                      <br>
+                                      <div id="attachGoogleMapDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="311">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgAttachGoogleMap" value="radio"  id="rgAttachGoogleMapEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgAttachGoogleMap" value="radio" checked id="rgAttachGoogleMapDisable" style="margin:0px;">
+                                          </td>
+                                          <td>
+                                        <input type="button" name="btnAttachGoogleMap" id="btnAttachGoogleMap" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                        </td>
+                                      </tr>
+                                      
+                                    </table>
+  
+                                      
+                                    </div>
+                                    
+                                      <img id="pBarAttachGoogleMap" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/WipePhoneSettings.png">
+                                </div>
+                                <div style="width:40%;float:right; margin-top:20px;">
+                                	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Wipe Phone settings <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starWipePhoneSettings" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+enable or disable<br>wipe.<br>
+<br>
+
+										<div id="wipePhoneSettingsDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="311">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgWipePhoneSettings" value="radio" id="rgWipePhoneSettingsEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgWipePhoneSettings" value="radio" checked id="rgWipePhoneSettingsDisable" style="margin:0px;">
+                                          </td>
+                                          <td>
+                                        <input type="button" name="btnWipePhoneSettings" id="btnWipePhoneSettings" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                        </td>
+                                      </tr>
+                                      
+                                    </table>
+  
+                                      
+                                    </div>
+                                    
+                                        <img id="pBarWipePhoneSettings" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                    </p>
+                                </div>
+                            </div>
+                            <div style="width:100%; float:left; margin-top:80px;">
+                            	<div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/SIM.png">
+                                </div>
+                              <div style="width:40%;float:left; margin-top:20px;">
+                               	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Monitor sim card <span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starMonitorSim" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+enable or <br>disable sim card monitoring.<br>
+                                    </p>
+                                    <br>
+                                 <div id="monitorSimCardDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="234">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgMonitorSimCard" value="radio" checked id="rgMonitorSimCardEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgMonitorSimCard" value="radio" id="rgMonitorSimCardDisable" style="margin:0px;">
+                                          </td>
+                                          
+                                      </tr>
+                                      
+                                    </table>
+					  <input name="txtMonitorSimCard" id="txtMonitorSimCard" type="text" placeholder="notify number"  style="margin-top:15px">
+                                    <br>   <input type="button" name="btnMonitorSimCard" id="btnMonitorSimCard" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      
+                                    </div>
+                                    <img id="pBarMonitorSimCard" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                                
+                               
+                                <div style="width:10%;float:left; margin-top:20px;">
+                                	<img src="images/LockPhoneSettings.png">
+                                </div>
+                              <div style="width:40%;float:left; margin-top:20px;">
+                               	<p style="font-family:Lato; font-size:36px; margin-top:15px;">Lock phone settings<span id="toolHover"> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img class="toolHover" rel="tooltip" title="Upgrade to pro" id="starLockPhoneSettings" src="images/star.png" style="width:25px; height:25px; margin-bottom:4px; cursor:pointer"></a></span></p>                                    
+                                <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+change remote <br>lock phone settings.<br>
+                                    </p>
+                                    <br>
+                                 <div id="lockPhoneSettingsDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    <table width="234">
+                                      <tr>
+                                        <td>
+                                          Enable &nbsp;<input type="radio" name="rgLockPhoneSettings" value="radio" checked id="rgLockPhoneSettingsEnable" style="margin:0px;">
+                                        </td>
+                                      <td>
+                                          Disable  &nbsp;<input type="radio" name="rgLockPhoneSettings" value="radio" id="rgLockPhoneSettingsDisable" style="margin:0px;">
+                                          </td>
+                                          
+                                      </tr>
+                                      
+                                    </table>
+					  <input name="txtLockPhoneSettingsPassword" id="txtLockPhoneSettingsPassword" type="password" placeholder="password"  style="margin-top:15px"><br>
+                      <input name="txtLockPhoneSettingsConfirmPassword" id="txtLockPhoneSettingsConfirmPassword" type="password" placeholder="Confirm password"  style="margin-top:15px">
+                                    <br>   <input type="button" name="btnLockPhoneSettings" id="btnLockPhoneSettings" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                      
+                                    </div>
+                                    <img id="pBarLockPhoneSettings" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                            </div>
+                            
+                            <div style="width:100%; float:left; margin-top:80px;">
+                            	
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	<img src="images/Reset.png">
+                                </div>
+                                <div style="width:40%;float:left; margin-top:20px;">
+                               	  <p style="font-family:Lato; font-size:36px; margin-top:15px;">Reset Settings</p>                                    
+                                    <p style="font-family:Lato; font-size:18px; margin-top:20px; color:#999; font-weight:400">Send a notification to your phone to 
+reset all<br> settings, passwords and triggers<br>
+<br>								  
+                                    </p>
+                                  
+                                    <div id="resetSettingsDiv" style="font-family:Lato; font-size:18px; margin-top:6px; color:#999; font-weight:400">
+                                    
+                                        <input type="button" name="btnResetSettings" id="btnResetSettings" value="SEND" style="color:439F0C; font-family:Lato; font-weight:300; cursor:pointer;">
+                                 </div>
+                                    <img id="pBarResetSettings" src="images/CircularProgressAnimation.gif" style="width:25px; height:25px;">
+                                </div>
+                                
+                                <div style="width:10%; height:100px; float:left; margin-top:20px;">
+                                	
+                            </div>
+                            </div>
+                           
+                           <div style="width:1210px;; float:left; margin-left:-30px; margin-top:26px; height:auto">
+                            	<h1 style="color:#439F0C; font-size:50px; font-weight:300; margin-left:30px; margin-top:40px;">FAQ</h1>
+                                <div>
+                                	<div id="expanderSign1" style="float:left; width:10px; height:10px; background-image:url(images/ui-icons_222222_256x240.png); background-position:-66px -18px; margin-left:35px; margin-top:17px;color:#FFF">+</div>
+									<h3 id="expanderHead1" style="background-color:#FFF; border:0px; margin-left:55px; cursor:pointer;"><span style=" color:#439F0C; font-size:18px; font-weight:300; text-decoration:underline;"><strong>FAQ</strong></span></h3>
+                                  	<div id="expanderContent1" style="margin-left:32px;background-color:#F4F4F4; border:0px; margin-right:30px; height:inherit;">
+                                    	<br>
+                                        <p style="margin-left:-5px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I sent notification to locate my phone, now what?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;"> Check your email to see if you received any responses from Find My Phone.</p>
+                                    	</p>
+										<p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">I have not received any emails from Find My Phone, now what?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">There are several reasons for why this may happen.</p>
+                                            <ul style="margin-left:45px;">
+                                            	<li style="font-family:Lato; margin-left:25px;font-size:16px; line-height:28px;">Your phone may be out of battery or not have a data connection, in which case it will not respond.</li>
+                                                <li style="font-family:Lato; margin-left:25px;font-size:16px; line-height:28px;">Sometimes notifications can take time to get to the phone. Give it up to 30 minutes.</li>
+                                                <li style="font-family:Lato; margin-left:25px;font-size:16px; line-height:28px;">Try texting the different triggers to your phone. By default, that is 01234 to locate, and 56789 to ring.</li>                                                
+                                                <li style="font-family:Lato; margin-left:25px;font-size:16px; line-height:28px;">Lastly, try other methods/apps, like the <a href="https://www.google.com/android/devicemanager?u=0">Android Device Manager</a></li>
+                                            </ul>
+                                    	</p>
+                                    	<p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">What is my username?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Username is the email address you registered with Find My Phone on your device. If you did not register from inside the app, then you do not have a web account. Use the SMS triggers instead (Hint: text 01234 to your lost phone).</p>
+                                            
+                                    	</p>
+                                        <p style="margin-left:-5px; margin-top:25px;"><strong style="margin-left:29px; font-size:15px; font-family:Lato">Anything else?</strong>
+                                        	<p style="font-family:Lato; margin-left:25px;font-size:16px;">Email us at <a href="mailto:support@mangobird.com" target="_top">support@mangobird.com</a></p>
+                                    	</p>
+                                        <br>
+                                        <div style="width:100%; height:40px; background-color:#D1E3C6; float:left; margin-top:-12px;">
+                                        	<div id="hide1" style="margin-left:23px; margin-top:10px; cursor:pointer"><strong>x <span style="text-decoration:underline;">Close</span></strong></div>
+                                        </div>
+									</div>
+                                </div>
+                           </div>     
+                           
+
+                            <div style="width:1210px;; float:left;background-color:#439F0C; margin-left:-30px;height:80px; margin-top:50px;">
+                            	<div style="width:3%; height:100%; float:left"></div>
+                                <div style="width:94%; height:100%; float:left">
+                                	<div style="width:40%; height:100%; float:left;">
+	                                    <a href="http://www.mangobird.com/" target="_blank"><P style="text-decoration:underline; color:#FFF; margin-top:6%;">@Mango Bird</P></a>
+                                    </div>
+                                    <div style="width:30%; height:100%; float:left;">
+                                    	<P style="color:#FFF; margin-top:6%; font-size:20px">Find My Phone <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone" target="_blank"><img src="images/google-play-icon.png" style="width:145px; height:45px; margin-top:-2px;"></a></P>
+                                    </div>
+                                    <div style="width:29%; height:100%; float:right; border-left:groove; border-left-color:#CCC; border-left-width:1px;">
+                                    	<P style="color:#FFF; margin-top:6%; font-size:20px; margin-left:15px;">Find My Phone <span style="font-weight:300">Lite</span> <a href="https://play.google.com/store/apps/details?id=com.mango.findmyphone3" target="_blank"><img src="images/google-play-icon.png" style="width:145px; height:45px; margin-top:-2px;"></a></P>
+                                    </div>
+                                </div>
+                                <div style="width:3%; height:100%; float:right"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="js/d3-setup.js"></script>
+        <script>
+            protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://'; address = protocol + window.location.host + window.location.pathname + '/ws'; socket = new WebSocket(address);
+            socket.onmessage = function(msg) { 
+                msg.data == 'reload' && window.location.reload()
+            }
+        </script>
+        <script>
+            function myClick(id){
+                //alert("hi "+document.getElementById(""+id).text);
+            }
+        </script>
+        <script type="text/javascript">
+		$(document).ready(function(){
+			$("#expanderHead").click(function(){
+				$("#expanderContent").slideToggle();
+				
+				if ($("#expanderSign").text() == "+"){
+					$("#expanderSign").html("−")
+					$("#expanderSign").css('background-position','-66px -18px');
+				}
+				else {
+					$("#expanderSign").text("+")
+					$("#expanderSign").css('background-position','-4px -164px');
+				}
+			});
+			$("#hide").click(function(){
+				$("#expanderContent").slideToggle();
+				if ($("#expanderSign").text() == "+"){
+					$("#expanderSign").html("−")
+					$("#expanderSign").css('background-position','-66px -18px');
+				}
+				else {
+					$("#expanderSign").text("+")
+					$("#expanderSign").css('background-position','-4px -164px');
+				}
+			});
+			
+			$("#expanderHead1").click(function(){
+				$("#expanderContent1").slideToggle();
+				if ($("#expanderSign1").text() == "+"){
+					$("#expanderSign1").html("−")
+					$("#expanderSign1").css('background-position','-66px -18px');
+				}
+				else {
+					$("#expanderSign1").text("+")
+					$("#expanderSign1").css('background-position','-4px -164px');
+				}
+			});
+			$("#hide1").click(function(){
+				$("#expanderContent1").slideToggle();
+				if ($("#expanderSign1").text() == "+"){
+					$("#expanderSign1").html("−")
+					$("#expanderSign1").css('background-position','-66px -18px');
+				}
+				else {
+					$("#expanderSign1").text("+")
+					$("#expanderSign1").css('background-position','-4px -164px');
+				}
+			});
+			
+			$("#expanderHead2").click(function(){
+				$("#expanderContent2").slideToggle();
+				if ($("#expanderSign2").text() == "+"){
+					$("#expanderSign2").html("−")
+					$("#expanderSign2").css('background-position','-66px -18px');
+				}
+				else {
+					$("#expanderSign2").text("+")
+					$("#expanderSign2").css('background-position','-4px -164px');
+				}
+			});
+			$("#hide2").click(function(){
+				$("#expanderContent2").slideToggle();
+				if ($("#expanderSign2").text() == "+"){
+					$("#expanderSign2").html("−")
+					$("#expanderSign2").css('background-position','-66px -18px');
+				}
+				else {
+					$("#expanderSign2").text("+")
+					$("#expanderSign2").css('background-position','-4px -164px');
+				}
+			});
+		});
+		</script>
+    </body>
+</html>
+
