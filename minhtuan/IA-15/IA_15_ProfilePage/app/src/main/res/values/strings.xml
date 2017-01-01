@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProfilePage</string>
+    <string name="name_student">Tuan</string>
+    <string name="large_text">
+        "Họ và tên: Tuan\n"
+    </string>
+    <string name="action_settings">Settings</string>
+</resources>
